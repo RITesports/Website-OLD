@@ -1,0 +1,38 @@
+version: '3.7'
+
+services:
+  app:
+    container_name: app
+    build: ./react-app
+    ports:
+      - '80:80'
+      - '443:443'
+    links:
+      - api
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+
+  certbot:
+    container_name: certbot
+    image: certbot/certbot
+    volumes:
+      - ./data/certbot/conf:/etc/letsencrypt
+      - ./data/certbot/www:/var/www/certbot
+    entrypoint: "/bin/sh -c 'trap exit TERM; while :; do certbot renew; sleep 12h & wait $${!}; done;'"
+  
+  api:
+    container_name: api
+    build: ./express-api
+    environment: 
+      - MONGO_HOST=db
+    depends_on:
+      - db
+    links:
+      - db
+  
+  db:
+    container_name: db
+    image: mongo
+    volumes:
+      - ./mongo-db:/data/db
