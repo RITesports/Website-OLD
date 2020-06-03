@@ -1,0 +1,5 @@
+# These owner(s) will be the default owner(s) for everything in
+# the repo. Unless a later match takes precedence,
+# owner(s) will be requested for review when someone
+# opens a pull request.
+*       @RITesports/managers app/renovate-approve
