@@ -1,2 +1,1 @@
-import './mongo';
 import './passport';

@@ -5,6 +5,7 @@ import express from 'express';
 import helmet from 'helmet';
 import http from 'http';
 import logger from 'morgan';
+import passport from 'passport';
 
 import apiRouter from './routes/api';
 
@@ -20,6 +21,8 @@ app.use(logger('dev'));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 app.use(cookieParser());
+
+app.use(passport.initialize());
 
 app.use('/api', apiRouter);
 
