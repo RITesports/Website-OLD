@@ -6,7 +6,7 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import { Link as RouterLink } from 'react-router-dom';
 import Divider from '@material-ui/core/Divider';
-import Cart from 'mdi-material-ui/Cart';
+import TshirtCrew from 'mdi-material-ui/TshirtCrew';
 import GamepadSquare from 'mdi-material-ui/GamepadSquare';
 import HomeVariant from 'mdi-material-ui/HomeVariant';
 import Facebook from 'mdi-material-ui/Facebook';
@@ -32,11 +32,11 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => (
       </ListItem>
       <Divider />
       <ListItem button component="a" href="https://metathreads.com/collections/rit-esports">
-        <ListItemIcon><Cart /></ListItemIcon>
+        <ListItemIcon><TshirtCrew /></ListItemIcon>
         <ListItemText>Sports Wear</ListItemText>
       </ListItem>
       <ListItem button component="a" href="https://teamstore.gtmsportswear.com/ritesports">
-        <ListItemIcon><Cart /></ListItemIcon>
+        <ListItemIcon><TshirtCrew /></ListItemIcon>
         <ListItemText>Casual Wear</ListItemText>
       </ListItem>
       <Divider />
