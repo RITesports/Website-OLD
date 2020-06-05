@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
 import IconButton from '@material-ui/core/IconButton';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import MenuIcon from '@material-ui/icons/Menu';
+import Menu from 'mdi-material-ui/Menu';
 import MenuDrawer from './MenuDrawer';
 import { RITEsports_Wordmark_LongWhite } from "../../assets/images";
 
@@ -17,7 +16,7 @@ const Header: React.FC = () => {
       <AppBar color="secondary">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open drawer" onClick={toggleDrawer}>
-            <MenuIcon />
+            <Menu />
           </IconButton>
           <img src={RITEsports_Wordmark_LongWhite} alt="RIT Esports Wordmark Long White" style={{ width: "20vh" }} />
         </Toolbar>
