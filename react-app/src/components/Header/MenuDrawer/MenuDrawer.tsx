@@ -26,37 +26,37 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => (
         <ListItemIcon><HomeVariant /></ListItemIcon>
         <ListItemText>Home</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component={RouterLink} to="/teams">
         <ListItemIcon><GamepadSquare /></ListItemIcon>
         <ListItemText>Teams</ListItemText>
       </ListItem>
       <Divider />
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://metathreads.com/collections/rit-esports">
         <ListItemIcon><Cart /></ListItemIcon>
         <ListItemText>Sports Wear</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://teamstore.gtmsportswear.com/ritesports">
         <ListItemIcon><Cart /></ListItemIcon>
         <ListItemText>Casual Wear</ListItemText>
       </ListItem>
       <Divider />
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://www.facebook.com/esportsrit">
         <ListItemIcon><Facebook /></ListItemIcon>
         <ListItemText>Facebook</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://twitter.com/RITesports">
         <ListItemIcon><Twitter /></ListItemIcon>
         <ListItemText>Twitter</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://www.instagram.com/ritesports">
         <ListItemIcon><Instagram /></ListItemIcon>
         <ListItemText>Instagram</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://www.twitch.tv/ritesports">
         <ListItemIcon><Twitch /></ListItemIcon>
         <ListItemText>Twitch</ListItemText>
       </ListItem>
-      <ListItem button component={RouterLink} to="/">
+      <ListItem button component="a" href="https://discordapp.com/invite/ritesports">
         <ListItemIcon><Discord /></ListItemIcon>
         <ListItemText>Discord</ListItemText>
       </ListItem>
