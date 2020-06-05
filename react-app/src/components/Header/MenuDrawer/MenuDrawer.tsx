@@ -60,6 +60,7 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => (
         <ListItemIcon><Discord /></ListItemIcon>
         <ListItemText>Discord</ListItemText>
       </ListItem>
+      <Divider />
     </List>
   </Drawer >
 );
