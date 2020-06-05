@@ -8,6 +8,7 @@ import logger from 'morgan';
 import passport from 'passport';
 
 import apiRouter from './routes/api';
+import authRouter from './routes/auth';
 
 const app = express();
 const server = http.createServer(app);
@@ -25,6 +26,7 @@ app.use(cookieParser());
 app.use(passport.initialize());
 
 app.use('/api', apiRouter);
+app.use('/auth', authRouter);
 
 app.use((req, res) => res.status(404).json({
   status: 404,
