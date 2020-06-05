@@ -2,6 +2,8 @@ import { CookieOptions } from 'express';
 import fs from 'fs';
 import { SignOptions } from 'jsonwebtoken';
 
+import { User } from '../../models/user';
+
 const hours = 0;
 const minutes = 30;
 const seconds = 0;
@@ -29,5 +31,9 @@ const jwtConfig = {
   cookieOptions,
   tokenOptions,
 };
+
+export interface JWT {
+  user: User;
+}
 
 export default jwtConfig;
