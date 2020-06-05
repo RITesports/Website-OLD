@@ -7,6 +7,7 @@ import http from 'http';
 import logger from 'morgan';
 import passport from 'passport';
 
+import updateJWT from './middleware/jwt';
 import apiRouter from './routes/api';
 import authRouter from './routes/auth';
 
@@ -24,6 +25,8 @@ app.use(express.json());
 app.use(cookieParser());
 
 app.use(passport.initialize());
+
+app.use(updateJWT());
 
 app.use('/api', apiRouter);
 app.use('/auth', authRouter);
