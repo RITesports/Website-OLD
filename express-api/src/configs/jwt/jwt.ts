@@ -31,7 +31,7 @@ const jwtConfig = {
   publicKey: fs.readFileSync('jwt_public.pem'),
   privateKey: fs.readFileSync('jwt_private.pem'),
 
-  cookieName: process.env.NODE_ENV !== 'development' ? '__Secure-jwt' : 'jwt',
+  cookieName: 'auth-jwt',
   cookieOptions,
   tokenOptions,
 };
