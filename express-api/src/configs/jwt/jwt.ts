@@ -24,8 +24,8 @@ const cookieOptions: CookieOptions = {
 const tokenOptions: SignOptions = { algorithm: 'RS256', expiresIn };
 
 const jwtConfig = {
-  publicKey: fs.readFileSync('public.pem'),
-  privateKey: fs.readFileSync('private.pem'),
+  publicKey: fs.readFileSync('jwt_public.pem'),
+  privateKey: fs.readFileSync('jwt_private.pem'),
 
   cookieName,
   cookieOptions,
