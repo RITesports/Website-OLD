@@ -27,7 +27,7 @@ const Header: React.FC = () => {
           <IconButton edge="start" color="inherit" aria-label="open menu drawer" onClick={toggleDrawer}>
             <MenuIcon />
           </IconButton>
-          <img className={classes.wordMark} src={RITEsportsWordmarkLongWhite} alt="RIT Esports Wordmark Long White" />
+          <img src={RITEsportsWordmarkLongWhite} alt="RIT Esports Wordmark Long White" className={classes.wordMark} />
         </Toolbar>
       </AppBar>
       <MenuDrawer open={open} onClose={toggleDrawer} />
