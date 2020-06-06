@@ -1,5 +1,5 @@
 # --- Express Server --- #
-FROM node:12-alpine
+FROM node:12
 
 WORKDIR /express-api
 
