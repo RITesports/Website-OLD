@@ -22,7 +22,7 @@ const Header: React.FC = () => {
 
   return (
     <header>
-      <AppBar color="secondary">
+      <AppBar position="sticky" color="secondary">
         <Toolbar>
           <IconButton edge="start" color="inherit" aria-label="open menu drawer" onClick={toggleDrawer}>
             <MenuIcon />
