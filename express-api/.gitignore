@@ -62,3 +62,7 @@ typings/
 
 # production
 build
+
+# secure keys
+jwt_private.pem
+jwt_public.pem
