@@ -62,7 +62,7 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => (
       </ListItem>
       <Divider />
     </List>
-  </Drawer >
+  </Drawer>
 );
 
 export default MenuDrawer;
