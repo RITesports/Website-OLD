@@ -1,1 +1,1 @@
-import './proximaNova.scss';
+import './ProximaNova.scss';

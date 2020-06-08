@@ -1,1 +1,1 @@
-import './industry.scss';
+import './Industry.scss';
