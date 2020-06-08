@@ -1,0 +1,1 @@
+import './industry.scss';
