@@ -1,5 +1,8 @@
 import { createMuiTheme, responsiveFontSizes } from '@material-ui/core';
 
+import './fonts/Industry';
+import './fonts/ProximaNova';
+
 const theme = responsiveFontSizes(createMuiTheme({
   palette: {
     primary: {
@@ -9,6 +12,14 @@ const theme = responsiveFontSizes(createMuiTheme({
     secondary: {
       main: '#1e1e1e',
     },
+  },
+  typography: {
+    fontFamily: [
+      'Industry',
+      "'Proxima Nova'",
+      'Roboto',
+      'sans-serif',
+    ].join(','),
   },
 }));
 
