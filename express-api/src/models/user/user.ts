@@ -12,7 +12,7 @@ export interface User {
   teamId?: string;
 }
 
-export type UserDocument = Omit<User, '_id' | 'teamId'> & Document & { _id: Types.ObjectId; teamId?: Types.ObjectId };
+export type UserDocument = Omit<User, 'teamId'> & Document & { teamId?: Types.ObjectId };
 
 export const User = model<UserDocument>('User', new Schema({
   name: { type: String, required: true },
