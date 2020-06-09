@@ -1,5 +1,6 @@
 import { Team, TeamDocument } from '../../models/team';
 
+/* Create */
 export const createTeam = async (team: Team) => {
   try {
     return await Team.create(team);
@@ -10,6 +11,7 @@ export const createTeam = async (team: Team) => {
   }
 };
 
+/* Read */
 export const findTeams = async () => {
   try {
     return await Team.find().sort('name');
@@ -34,6 +36,7 @@ export const findTeamByIdentifierOrId = async (identifierOrId: string) => {
   return team;
 };
 
+/* Update */
 export const updateTeam = async (team: Team) => {
   let updatedTeam: TeamDocument | null;
 
@@ -49,6 +52,7 @@ export const updateTeam = async (team: Team) => {
   return updatedTeam;
 };
 
+/* Delete */
 export const deleteTeam = async (id: string) => {
   let deletedTeam: TeamDocument | null;
 
