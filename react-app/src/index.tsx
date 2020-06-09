@@ -8,12 +8,15 @@ import './index.scss';
 import App from './App';
 import theme from './theme';
 import * as serviceWorker from './serviceWorker';
+import { UserProvider } from './utils/user';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <App />
+        <UserProvider>
+          <App />
+        </UserProvider>
       </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
