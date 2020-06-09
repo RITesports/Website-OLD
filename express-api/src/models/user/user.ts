@@ -3,7 +3,7 @@ import {
 } from 'mongoose';
 
 export interface User {
-  _id?: Types.ObjectId;
+  _id?: string;
 
   name: string;
   email: string;
