@@ -29,7 +29,7 @@ export const TeamJoi = Joi.object().keys({
   _id: Joi.string().regex(/^[a-f\d]{24}$/i),
 
   name: Joi.string().required(),
-  identifier: Joi.string().required(),
+  identifier: Joi.string().regex(/^[\w-]*$/).required(),
 
   divisions: Joi.array().items(DivisionJoi),
 
