@@ -1,10 +1,9 @@
 import { Router } from 'express';
 
+import teamsRoutes from './teams';
+
 const router = Router();
 
-router.get('/', (req, res) => res.status(200).json({
-  status: 200,
-  message: 'API Routes',
-}));
+router.use('/teams', teamsRoutes);
 
 export default router;
