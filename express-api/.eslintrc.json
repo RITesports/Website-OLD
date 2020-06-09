@@ -25,6 +25,12 @@
   "rules": {
     "max-len": "off",
     "no-console": "off",
+    "object-curly-newline": [
+      "error",
+      {
+        "multiline": true
+      }
+    ],
     "@typescript-eslint/brace-style": [
       "error",
       "stroustrup"

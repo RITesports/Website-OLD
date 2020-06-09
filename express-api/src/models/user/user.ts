@@ -1,6 +1,4 @@
-import {
-  Document, model, Schema, Types,
-} from 'mongoose';
+import { Document, model, Schema, Types } from 'mongoose';
 
 export interface User {
   _id?: string;
