@@ -1,17 +1,17 @@
 import { RequestHandler } from 'express';
 import jwt from 'jsonwebtoken';
 
-import jwtConfig, { JWT } from '../../configs/jwt';
+import jwtConfig from '../../configs/jwt';
+import { User } from '../../models/user';
 import { findUserByEmail } from '../../services/user';
 
 const updateJWT = (): RequestHandler => async (req, res, next) => {
   if (req.cookies[jwtConfig.cookieName]) {
     try {
-      const { user: decoded } = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as JWT;
+      let user = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as User;
+      user = (await findUserByEmail(user.email)).toJSON();
 
-      const user = await findUserByEmail(decoded.email);
-
-      const token = jwt.sign({ user }, jwtConfig.privateKey, jwtConfig.tokenOptions);
+      const token = jwt.sign({ ...user }, jwtConfig.privateKey, jwtConfig.tokenOptions);
 
       res.cookie(jwtConfig.cookieName, token, jwtConfig.cookieOptions);
     }

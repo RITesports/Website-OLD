@@ -8,7 +8,7 @@ passport.use(new GoogleStrategy(
   googleStrategyOptions,
   (accessToken, refreshToken, profile, done) => {
     findOrCreateUser(profile.displayName, profile.emails![0].value) // eslint-disable-line @typescript-eslint/no-non-null-assertion
-      .then((user) => done(undefined, user))
+      .then((user) => done(undefined, user.toJSON()))
       .catch((e) => done(e));
   },
 ));

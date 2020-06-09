@@ -3,16 +3,16 @@ import {
 } from 'mongoose';
 
 export interface User {
-  _id?: Types.ObjectId;
+  _id?: string;
 
   name: string;
   email: string;
 
   role: 'Admin' | 'Manager' | 'User';
-  teamId?: Types.ObjectId;
+  teamId?: string;
 }
 
-export type UserDocument = User & Document;
+export type UserDocument = Omit<User, 'teamId'> & Document & { teamId?: Types.ObjectId };
 
 export const User = model<UserDocument>('User', new Schema({
   name: { type: String, required: true },
