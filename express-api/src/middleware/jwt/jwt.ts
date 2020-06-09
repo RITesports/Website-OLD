@@ -8,9 +8,10 @@ import { findUserByEmail } from '../../services/user';
 const updateJWT = (): RequestHandler => async (req, res, next) => {
   if (req.cookies[jwtConfig.cookieName]) {
     try {
-      const user = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as User;
+      let user = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as User;
+      user = (await findUserByEmail(user.email)).toJSON();
 
-      const token = jwt.sign({ ...(await findUserByEmail(user.email)).toJSON() }, jwtConfig.privateKey, jwtConfig.tokenOptions);
+      const token = jwt.sign({ ...user }, jwtConfig.privateKey, jwtConfig.tokenOptions);
 
       res.cookie(jwtConfig.cookieName, token, jwtConfig.cookieOptions);
     }
