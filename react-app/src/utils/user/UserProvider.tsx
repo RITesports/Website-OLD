@@ -10,6 +10,7 @@ interface IsLoggedInRes {
   user?: User;
   message: string;
 }
+
 const UserProvider: React.FC = ({ children }) => {
   const [loading, setLoading] = useState(true);
   const [user, setUser] = useState<User>();
