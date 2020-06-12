@@ -6,7 +6,7 @@ const Teams = lazy(() => import('../pages/Teams'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Routes: React.FC = () => (
-  <main>
+  <main style={{ overflowX: 'hidden' }}>
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route exact path="/">
