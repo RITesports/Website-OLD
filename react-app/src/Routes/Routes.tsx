@@ -2,6 +2,7 @@ import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 const Home = lazy(() => import('../pages/Home'));
+const Teams = lazy(() => import('../pages/Teams'));
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Routes: React.FC = () => (
@@ -10,6 +11,10 @@ const Routes: React.FC = () => (
       <Switch>
         <Route exact path="/">
           <Home />
+        </Route>
+
+        <Route exact path="/teams">
+          <Teams />
         </Route>
 
         <Route>
