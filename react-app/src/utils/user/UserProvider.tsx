@@ -1,23 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-import User from '../../models/user';
 
 import UserContext from './UserContext';
+import User from '../../models/user';
 
-interface IsLoggedIn {
+interface IsLoggedInRes {
   status: number;
   isLoggedIn: boolean;
   user?: User;
   message: string;
 }
+
 const UserProvider: React.FC = ({ children }) => {
   const [loading, setLoading] = useState(true);
-  const [user, setUser] = useState<User | undefined>();
+  const [user, setUser] = useState<User>();
 
   useEffect(() => {
-    axios.get<IsLoggedIn>('/auth/isLoggedIn')
+    axios.get<IsLoggedInRes>('/auth/isLoggedIn')
       .then(({ data }) => setUser(data.user))
-      .catch()
+      .catch(() => { })
       .finally(() => setLoading(false));
   }, []);
 
