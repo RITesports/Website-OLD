@@ -27,7 +27,7 @@ const useTeam = (identifierOrId?: string) => {
           setCanDelete(data.canDelete);
           setCanEdit(data.canEdit);
         })
-        .catch((e) => setError(e.message));
+        .catch((e) => setError(e.response.data.message));
     }
   }, [identifierOrId]);
 

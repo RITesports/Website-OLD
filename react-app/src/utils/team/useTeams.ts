@@ -26,7 +26,7 @@ const useTeams = () => {
         setCanCreate(data.canCreate);
         setCanDelete(data.canDelete);
       })
-      .catch((e) => setError(e.message));
+      .catch((e) => setError(e.response.data.message));
   }, []);
 
   return {
