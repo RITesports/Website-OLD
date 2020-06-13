@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
@@ -14,7 +13,7 @@ const useStyles = makeStyles({
     minHeight: '26rem',
     width: '18rem',
 
-    transition: '.2s ease-in-out',
+    transition: '.2s',
     '&:hover': {
       transform: 'scale(1.05)',
     },
