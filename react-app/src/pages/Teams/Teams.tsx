@@ -30,7 +30,7 @@ const Teams: React.FC = () => {
             <Grid container justify="center" spacing={5}>
               {teams.map((team) => (
                 <Grid key={team._id} item>
-                  <Link component={RouterLink} to={`/teams/${team.identifier}`} underline="none">
+                  <Link component={RouterLink} to={`/teams/${team.identifier}`} underline="hover">
                     <TeamCard team={team} />
                   </Link>
                 </Grid>

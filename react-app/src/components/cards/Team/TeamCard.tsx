@@ -13,6 +13,11 @@ const useStyles = makeStyles({
   card: {
     minHeight: '26rem',
     width: '18rem',
+
+    transition: '.2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
   },
 });
 
@@ -29,14 +34,12 @@ const TeamCard: React.FC<Props> = ({ team, children }) => {
   };
 
   return (
-    <CardActionArea>
-      <Card raised className={classes.card}>
-        <CardMedia component="img" src={team?.imageUrl || controller} onError={onError} />
-        <CardContent>
-          {children || (team && <Typography variant="h5" align="center">{team.name}</Typography>)}
-        </CardContent>
-      </Card>
-    </CardActionArea>
+    <Card raised className={classes.card}>
+      <CardMedia component="img" src={team?.imageUrl || controller} onError={onError} />
+      <CardContent>
+        {children || (team && <Typography variant="h5" align="center">{team.name}</Typography>)}
+      </CardContent>
+    </Card>
   );
 };
 
