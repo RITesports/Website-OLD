@@ -30,11 +30,20 @@
   ],
   "rules": {
     "max-len": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
     "react/prop-types": "off",
     "@typescript-eslint/brace-style": [
       "error",
       "stroustrup"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/lines-between-class-members": "off"
   }
 }
