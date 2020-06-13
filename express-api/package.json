@@ -10,7 +10,7 @@
     "@types/helmet": "0.0.47",
     "@types/jsonwebtoken": "8.5.0",
     "@types/mongoose": "5.7.24",
-    "@types/morgan": "1.9.0",
+    "@types/morgan": "1.9.1",
     "@types/node": "14.0.13",
     "@types/passport": "1.0.3",
     "@types/passport-google-oauth20": "2.0.3",
