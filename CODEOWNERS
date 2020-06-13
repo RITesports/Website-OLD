@@ -2,4 +2,4 @@
 # the repo. Unless a later match takes precedence,
 # owner(s) will be requested for review when someone
 # opens a pull request.
-*       @RITesports/managers app/renovate-approve
+*       @RITesports/managers
