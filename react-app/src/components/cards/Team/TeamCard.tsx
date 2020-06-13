@@ -13,7 +13,7 @@ const useStyles = makeStyles({
     minHeight: '26rem',
     width: '18rem',
 
-    transition: '.2s',
+    transition: '.2s ease-in-out',
     '&:hover': {
       transform: 'scale(1.05)',
     },
