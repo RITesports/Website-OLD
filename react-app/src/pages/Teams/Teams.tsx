@@ -5,6 +5,8 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
+import Alert from '@material-ui/lab/Alert';
+
 import TeamCard from '../../components/cards/Team';
 import { useTeams } from '../../utils/team';
 
@@ -16,29 +18,35 @@ const useStyles = makeStyles((theme) => createStyles({
 
 const Teams: React.FC = () => {
   const classes = useStyles();
-  const { teams, canCreate } = useTeams();
+  const { teams, error, canCreate } = useTeams();
 
   return (
     <>
-      <Typography variant="h3" align="center" className={classes.title}>Teams</Typography>
-      <Grid container justify="center" spacing={5}>
-        {teams.map((team) => (
-          <Grid key={team._id} item>
-            <Link component={RouterLink} to={`/teams/${team.identifier}`} underline="none">
-              <TeamCard team={team} />
-            </Link>
-          </Grid>
-        ))}
-        {canCreate && (
-          <Grid item>
-            <Link component={RouterLink} to="/teams/createTeam" underline="none">
-              <TeamCard>
-                <Typography variant="h5" align="center" color="primary">Create Team</Typography>
-              </TeamCard>
-            </Link>
-          </Grid>
+      {error
+        ? <Alert severity="error">{error}</Alert>
+        : (
+          <>
+            <Typography variant="h3" align="center" className={classes.title}>Teams</Typography>
+            <Grid container justify="center" spacing={5}>
+              {teams.map((team) => (
+                <Grid key={team._id} item>
+                  <Link component={RouterLink} to={`/teams/${team.identifier}`} underline="none">
+                    <TeamCard team={team} />
+                  </Link>
+                </Grid>
+              ))}
+              {canCreate && (
+                <Grid item>
+                  <Link component={RouterLink} to="/teams/createTeam" underline="none">
+                    <TeamCard>
+                      <Typography variant="h5" align="center" color="primary">Create Team</Typography>
+                    </TeamCard>
+                  </Link>
+                </Grid>
+              )}
+            </Grid>
+          </>
         )}
-      </Grid>
     </>
   );
 };
