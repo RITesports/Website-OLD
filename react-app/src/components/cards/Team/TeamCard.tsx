@@ -1,6 +1,5 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
@@ -13,6 +12,11 @@ const useStyles = makeStyles({
   card: {
     minHeight: '26rem',
     width: '18rem',
+
+    transition: '.2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
   },
 });
 
@@ -29,14 +33,12 @@ const TeamCard: React.FC<Props> = ({ team, children }) => {
   };
 
   return (
-    <CardActionArea>
-      <Card raised className={classes.card}>
-        <CardMedia component="img" src={team?.imageUrl || controller} onError={onError} />
-        <CardContent>
-          {children || (team && <Typography variant="h5" align="center">{team.name}</Typography>)}
-        </CardContent>
-      </Card>
-    </CardActionArea>
+    <Card raised className={classes.card}>
+      <CardMedia component="img" src={team?.imageUrl || controller} onError={onError} />
+      <CardContent>
+        {children || (team && <Typography variant="h5" align="center">{team.name}</Typography>)}
+      </CardContent>
+    </Card>
   );
 };
 
