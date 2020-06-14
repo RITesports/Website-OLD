@@ -38,6 +38,14 @@
         ]
       }
     ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "exceptions": [
+          "Route"
+        ]
+      }
+    ],
     "react/prop-types": "off",
     "@typescript-eslint/brace-style": [
       "error",
