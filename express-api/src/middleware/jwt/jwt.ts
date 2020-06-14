@@ -8,8 +8,8 @@ import { findUserByEmail } from '../../services/user';
 const updateJWT = (): RequestHandler => async (req, res, next) => {
   if (req.cookies[jwtConfig.cookieName]) {
     try {
-      let user = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as User;
-      user = (await findUserByEmail(user.email)).toJSON();
+      const decoded = jwt.verify(req.cookies[jwtConfig.cookieName], jwtConfig.publicKey) as User;
+      const user = (await findUserByEmail(decoded.email)).toJSON() as User;
 
       const token = jwt.sign({ ...user }, jwtConfig.privateKey, jwtConfig.tokenOptions);
 
