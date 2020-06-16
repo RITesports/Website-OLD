@@ -2,6 +2,8 @@ import Joi from '@hapi/joi';
 import { Schema } from 'mongoose';
 
 export interface Player {
+  _id?: string;
+
   username: string;
   role: string;
 
@@ -13,9 +15,11 @@ export const Player = new Schema<Player>({
   role: { type: String, required: true },
 
   imageUrl: String,
-}, { _id: false });
+});
 
 export const PlayerJoi = Joi.object().keys({
+  _id: Joi.string().regex(/^[a-f\d]{24}$/i),
+
   username: Joi.string().required(),
   role: Joi.string().required(),
 
