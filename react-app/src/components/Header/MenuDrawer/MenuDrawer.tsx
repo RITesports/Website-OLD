@@ -1,11 +1,11 @@
 import React from 'react';
 import { Link as RouterLink } from 'react-router-dom';
+import Divider from '@material-ui/core/Divider';
 import Drawer from '@material-ui/core/Drawer';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
 import FacebookIcon from 'mdi-material-ui/Facebook';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
@@ -19,6 +19,22 @@ import TwitterIcon from 'mdi-material-ui/Twitter';
 
 import useUser from '../../../utils/user';
 
+const routes = [
+  { text: 'Home', to: '/', icon: <HomeVariantIcon /> },
+  { text: 'Teams', to: '/teams', icon: <GamepadSquareIcon /> },
+];
+const merch = [
+  { text: 'Sports Wear', href: 'https://metathreads.com/collections/rit-esports', icon: <TshirtCrewIcon htmlColor="#f25822" /> },
+  { text: 'Casual Wear', href: 'https://teamstore.gtmsportswear.com/ritesports', icon: <TshirtCrewIcon htmlColor="#000" /> },
+];
+const socials = [
+  { text: 'Facebook', href: 'https://www.facebook.com/esportsrit', icon: <FacebookIcon htmlColor="#3b5998" /> },
+  { text: 'Twitter', href: 'https://twitter.com/RITesports', icon: <TwitterIcon htmlColor="#1da1f2" /> },
+  { text: 'Instagram', href: 'https://www.instagram.com/ritesports', icon: <InstagramIcon htmlColor="#e1306c" /> },
+  { text: 'Twitch', href: 'https://www.twitch.tv/ritesports', icon: <TwitchIcon htmlColor="#6441a5" /> },
+  { text: 'Discord', href: 'https://discordapp.com/invite/ritesports', icon: <DiscordIcon htmlColor="#7289da" /> },
+];
+
 type Props = {
   open: boolean;
   onClose: () => void;
@@ -29,44 +45,26 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => {
   return (
     <Drawer open={open} onClose={onClose}>
       <List onClick={onClose}>
-        <ListItem button component={RouterLink} to="/">
-          <ListItemIcon><HomeVariantIcon /></ListItemIcon>
-          <ListItemText>Home</ListItemText>
-        </ListItem>
-        <ListItem button component={RouterLink} to="/teams">
-          <ListItemIcon><GamepadSquareIcon /></ListItemIcon>
-          <ListItemText>Teams</ListItemText>
-        </ListItem>
+        {routes.map(({ to, icon, text }) => (
+          <ListItem key={text} button component={RouterLink} to={to}>
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText>{text}</ListItemText>
+          </ListItem>
+        ))}
         <Divider />
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://metathreads.com/collections/rit-esports">
-          <ListItemIcon><TshirtCrewIcon style={{ color: '#f25822' }} /></ListItemIcon>
-          <ListItemText>Sports Wear</ListItemText>
-        </ListItem>
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://teamstore.gtmsportswear.com/ritesports">
-          <ListItemIcon><TshirtCrewIcon style={{ color: '#000' }} /></ListItemIcon>
-          <ListItemText>Casual Wear</ListItemText>
-        </ListItem>
+        {merch.map(({ href, icon, text }) => (
+          <ListItem key={text} button component="a" href={href} target="_blank" rel="noopener noreferrer">
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText>{text}</ListItemText>
+          </ListItem>
+        ))}
         <Divider />
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/esportsrit">
-          <ListItemIcon><FacebookIcon style={{ color: '#3b5998' }} /></ListItemIcon>
-          <ListItemText>Facebook</ListItemText>
-        </ListItem>
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://twitter.com/RITesports">
-          <ListItemIcon><TwitterIcon style={{ color: '#1da1f2' }} /></ListItemIcon>
-          <ListItemText>Twitter</ListItemText>
-        </ListItem>
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/ritesports">
-          <ListItemIcon><InstagramIcon style={{ color: '#e1306c' }} /></ListItemIcon>
-          <ListItemText>Instagram</ListItemText>
-        </ListItem>
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://www.twitch.tv/ritesports">
-          <ListItemIcon><TwitchIcon style={{ color: '#6441a5' }} /></ListItemIcon>
-          <ListItemText>Twitch</ListItemText>
-        </ListItem>
-        <ListItem button component="a" target="_blank" rel="noopener noreferrer" href="https://discordapp.com/invite/ritesports">
-          <ListItemIcon><DiscordIcon style={{ color: '#7289da' }} /></ListItemIcon>
-          <ListItemText>Discord</ListItemText>
-        </ListItem>
+        {socials.map(({ href, icon, text }) => (
+          <ListItem key={text} button component="a" href={href} target="_blank" rel="noopener noreferrer">
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText>{text}</ListItemText>
+          </ListItem>
+        ))}
         <Divider />
         <ListItem button component="a" href={user ? '/auth/logout' : '/auth/google'}>
           <ListItemIcon>{user ? <LogoutIcon /> : <LoginIcon />}</ListItemIcon>
