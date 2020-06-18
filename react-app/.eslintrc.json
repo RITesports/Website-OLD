@@ -54,13 +54,6 @@
     "@typescript-eslint/explicit-function-return-type": "off",
     "@typescript-eslint/explicit-module-boundary-types": "off",
     "@typescript-eslint/lines-between-class-members": "off",
-    "@typescript-eslint/no-unsafe-assignment": "off",
-    "@typescript-eslint/no-unsafe-member-access": "off",
-    "@typescript-eslint/restrict-template-expressions": [
-      "error",
-      {
-        "allowAny": true
-      }
-    ]
+    "@typescript-eslint/no-unsafe-member-access": "off"
   }
 }
