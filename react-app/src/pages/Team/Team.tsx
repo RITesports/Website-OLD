@@ -7,13 +7,13 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
 
-import PlayerCard from '../../components/cards/Player';
 import TeamCard from '../../components/cards/Team';
+import TeamDetails from '../../components/details/Team';
 import { useTeam } from '../../utils/team';
 
 const useStyles = makeStyles((theme) => createStyles({
-  title: {
-    margin: theme.spacing(3),
+  top: {
+    marginTop: theme.spacing(3),
   },
 }));
 
@@ -28,32 +28,20 @@ const Team: React.FC = () => {
       {error
         ? <Alert severity="error">{error}</Alert>
         : (
-          <>
-            <Typography variant="h3" align="center" className={classes.title}>{team.name}</Typography>
-            <Grid container direction="column" alignItems="center" spacing={5}>
-              {team.divisions?.map((division, index) => (
-                <React.Fragment key={index}>
-                  {division.name && <Grid item><Typography variant="h4">{division.name}</Typography></Grid>}
-                  <Grid item container justify="center" spacing={5}>
-                    {division.players?.map((player) => (
-                      <Grid key={player.username} item>
-                        <PlayerCard player={player} />
-                      </Grid>
-                    ))}
-                  </Grid>
-                </React.Fragment>
-              ))}
-              {canEdit && (
-                <Grid item>
-                  <Link component={RouterLink} to={`/teams/${identifierOrId}/edit`} underline="none">
-                    <TeamCard>
-                      <Typography variant="h5" align="center" color="primary">Edit Team</Typography>
-                    </TeamCard>
-                  </Link>
-                </Grid>
-              )}
+          <Grid container direction="column" alignItems="center" spacing={3}>
+            <Grid item className={classes.top}>
+              <TeamDetails team={team} />
             </Grid>
-          </>
+            {canEdit && (
+              <Grid item>
+                <Link component={RouterLink} to={`/teams/${identifierOrId}/edit`} underline="none">
+                  <TeamCard>
+                    <Typography variant="h5" align="center" color="primary">Edit Team</Typography>
+                  </TeamCard>
+                </Link>
+              </Grid>
+            )}
+          </Grid>
         )}
     </>
   );
