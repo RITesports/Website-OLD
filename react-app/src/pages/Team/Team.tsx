@@ -17,8 +17,11 @@ const useStyles = makeStyles((theme) => createStyles({
   },
 }));
 
+type Params = {
+  identifierOrId: string;
+};
 const Team: React.FC = () => {
-  const { identifierOrId } = useParams();
+  const { identifierOrId } = useParams<Params>();
 
   const classes = useStyles();
   const { team, error, canEdit } = useTeam(identifierOrId);
