@@ -24,7 +24,6 @@ export const getMatches: RequestHandler = async (req, res) => {
     return res.status(200).json({
       status: 200,
       matches: await MatchService.findMatches({
-        startTime: { $gte: new Date(new Date().setHours(0, 0, 0, 0)) },
         ...name && { name: { $regex: name, $options: 'i' } },
         ...final !== undefined && { final },
         ...before && { startTime: { $lte: new Date(before) } },
