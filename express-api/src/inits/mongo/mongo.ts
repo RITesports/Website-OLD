@@ -1,8 +1,11 @@
 import mongoose from 'mongoose';
+import mongoosePaginate from 'mongoose-paginate';
 
 import mongoConfig from '../../configs/mongo';
 
 mongoose.set('toJSON', { transform: true, flattenDecimals: true, versionKey: false });
+
+mongoose.plugin(mongoosePaginate);
 
 const mongoUrl = `mongodb://${mongoConfig.host}:${mongoConfig.port}/${mongoConfig.db}`;
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useCreateIndex: true, useFindAndModify: false, useUnifiedTopology: true })
