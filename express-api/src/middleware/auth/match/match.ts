@@ -2,7 +2,6 @@ import { RequestHandler } from 'express';
 import jwt from 'jsonwebtoken';
 
 import jwtConfig from '../../../configs/jwt';
-import { MatchDocument } from '../../../models/match';
 import { User } from '../../../models/user';
 import * as MatchService from '../../../services/match';
 
@@ -28,9 +27,10 @@ export const updateMatch: RequestHandler = async (req, res, next) => {
 
   if (user.role === 'Admin') return next();
   if (user.role === 'Manager') {
-    let match: MatchDocument;
     try {
-      match = await MatchService.findMatchById(req.params.id);
+      const match = await MatchService.findMatchById(req.params.id);
+
+      if (user.teamId === match.teamId.toHexString()) return next();
     }
     catch (e) {
       return res.status(500).json({
@@ -38,8 +38,6 @@ export const updateMatch: RequestHandler = async (req, res, next) => {
         message: e.message,
       });
     }
-
-    if (user.teamId === match.teamId.toHexString()) return next();
   }
 
   return res.status(403).json({ status: 403, message: 'Forbidden: You do not have permission to update this match' });
@@ -52,9 +50,10 @@ export const deleteMatch: RequestHandler = async (req, res, next) => {
 
   if (user.role === 'Admin') return next();
   if (user.role === 'Manager') {
-    let match: MatchDocument;
     try {
-      match = await MatchService.findMatchById(req.params.id);
+      const match = await MatchService.findMatchById(req.params.id);
+
+      if (user.teamId === match.teamId.toHexString()) return next();
     }
     catch (e) {
       return res.status(500).json({
@@ -62,8 +61,6 @@ export const deleteMatch: RequestHandler = async (req, res, next) => {
         message: e.message,
       });
     }
-
-    if (user.teamId === match.teamId.toHexString()) return next();
   }
 
   return res.status(403).json({ status: 403, message: 'Forbidden: You do not have permission to delete this match' });
