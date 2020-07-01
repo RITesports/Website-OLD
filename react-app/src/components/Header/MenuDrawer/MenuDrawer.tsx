@@ -16,6 +16,7 @@ import LogoutIcon from 'mdi-material-ui/Logout';
 import TshirtCrewIcon from 'mdi-material-ui/TshirtCrew';
 import TwitchIcon from 'mdi-material-ui/Twitch';
 import TwitterIcon from 'mdi-material-ui/Twitter';
+import WaveIcon from 'mdi-material-ui/Hail';
 
 import useUser from '../../../utils/user';
 
@@ -66,6 +67,12 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => {
           </ListItem>
         ))}
         <Divider />
+        {user && (
+          <ListItem>
+            <ListItemIcon><WaveIcon /></ListItemIcon>
+            <ListItemText>{`Hey, ${user.name.split(' ')[0]}!`}</ListItemText>
+          </ListItem>
+        )}
         <ListItem button component="a" href={user ? '/auth/logout' : '/auth/google'}>
           <ListItemIcon>{user ? <LogoutIcon /> : <LoginIcon />}</ListItemIcon>
           <ListItemText>{user ? 'Log Out' : 'Log In'}</ListItemText>
