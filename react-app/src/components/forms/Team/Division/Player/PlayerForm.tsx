@@ -38,7 +38,7 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
       />
       <TextField
         required
-        label="Player Userame"
+        label="Player Role"
         value={player.role}
         error={!player.role}
         helperText={!player.role && 'Player Role Required'}
