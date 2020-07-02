@@ -42,7 +42,8 @@
       "error",
       {
         "exceptions": [
-          "Route"
+          "Route",
+          "SvgIcon"
         ]
       }
     ],
