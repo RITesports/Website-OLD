@@ -24,6 +24,7 @@ const useStyles = makeStyles((theme) => createStyles({
   avatar: {
     width: theme.spacing(4),
     height: theme.spacing(4),
+    fontSize: theme.spacing(2),
     background: theme.palette.primary.main,
   },
 }));
