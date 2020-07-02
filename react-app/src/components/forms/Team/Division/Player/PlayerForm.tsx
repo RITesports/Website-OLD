@@ -24,7 +24,7 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
     <>
       <TextField
         required
-        label="Player Userame"
+        label="Player Username"
         value={player.username}
         error={!player.username}
         helperText={!player.username && 'Player Username Required'}
