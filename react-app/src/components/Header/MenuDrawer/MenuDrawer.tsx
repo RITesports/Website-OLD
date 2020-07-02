@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FacebookIcon from 'mdi-material-ui/Facebook';
-import FileIcon from 'mdi-material-ui/FileDocumentOutline';
+import FileDocumentIcon from 'mdi-material-ui/FileDocumentOutline';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
 import GithubIcon from 'mdi-material-ui/Github';
@@ -35,7 +35,9 @@ const socials = [
   { text: 'Twitch', href: 'https://www.twitch.tv/ritesports', icon: <TwitchIcon htmlColor="#6441a5" /> },
   { text: 'Discord', href: 'https://discordapp.com/invite/ritesports', icon: <DiscordIcon htmlColor="#7289da" /> },
   { text: 'Github', href: 'https://github.com/RITesports', icon: <GithubIcon htmlColor="#333" /> },
-  { text: 'Branding', href: '/RITEsports_BrandingGuide_7.pdf', icon: <FileIcon htmlColor="#f25822" /> },
+];
+const files = [
+  { text: 'Branding', href: '/RITEsports_BrandingGuide_7.pdf', icon: <FileDocumentIcon htmlColor="#505050" /> },
 ];
 
 type Props = {
@@ -63,6 +65,13 @@ const MenuDrawer: React.FC<Props> = ({ open, onClose }) => {
         ))}
         <Divider />
         {socials.map(({ href, icon, text }) => (
+          <ListItem key={text} button component="a" href={href} target="_blank" rel="noopener noreferrer">
+            <ListItemIcon>{icon}</ListItemIcon>
+            <ListItemText>{text}</ListItemText>
+          </ListItem>
+        ))}
+        <Divider />
+        {files.map(({ href, icon, text }) => (
           <ListItem key={text} button component="a" href={href} target="_blank" rel="noopener noreferrer">
             <ListItemIcon>{icon}</ListItemIcon>
             <ListItemText>{text}</ListItemText>
