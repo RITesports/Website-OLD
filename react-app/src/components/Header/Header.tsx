@@ -1,42 +1,32 @@
 import React, { useState } from 'react';
 import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
+import Avatar from '@material-ui/core/Avatar';
+import Button from '@material-ui/core/Button';
+import Hidden from '@material-ui/core/Hidden';
+import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
-import Avatar from '@material-ui/core/Avatar';
-import Divider from '@material-ui/core/Divider';
-import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import AccountCircleIcon from 'mdi-material-ui/AccountCircle';
+import Toolbar from '@material-ui/core/Toolbar';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from 'mdi-material-ui/Menu';
 
 import MenuDrawer from './MenuDrawer';
 import { RITEsportsWordmarkLongWhite } from '../../assets/images';
 import useUser from '../../utils/user';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => createStyles({
   wordMark: {
-    width: '20vh',
+    height: theme.spacing(2.5),
   },
   separator: {
     flexGrow: 1,
   },
   avatar: {
-    background: '#F25822',
-    marginLeft: 'auto',
-    marginRight: -12,
-    width: '3vh',
-    height: '3vh',
-    fontSize: '1.5vh',
+    width: theme.spacing(4),
+    height: theme.spacing(4),
+    background: theme.palette.primary.main,
   },
-  avatarSized: {
-    marginLeft: 'auto',
-    marginRight: -12,
-    width: '3vh',
-    height: '3vh',
-    fontSize: '1.5vh',
-  },
-});
+}));
 
 const Header: React.FC = () => {
   const classes = useStyles();
@@ -56,15 +46,19 @@ const Header: React.FC = () => {
           <IconButton edge="start" color="inherit" aria-label="open menu drawer" onClick={toggleDrawer}>
             <MenuIcon />
           </IconButton>
-          <img src={RITEsportsWordmarkLongWhite} alt="RIT Esports Wordmark Long White" className={classes.wordMark} />
+          <Hidden xsDown>
+            <img src={RITEsportsWordmarkLongWhite} alt="RIT Esports Wordmark Long White" className={classes.wordMark} />
+          </Hidden>
           <div className={classes.separator} />
-          <IconButton edge="end" color="inherit" aria-label="open user menu" onClick={openMenu} className={classes.avatarSized}>
-            {user ? <Avatar alt={user.name} className={classes.avatar}>{user.name.split(' ').map((n, i, a) => (i === 0 || i + 1 === a.length ? n[0] : null)).join('').toUpperCase()}</Avatar> : <AccountCircleIcon fontSize="large" className={classes.avatarSized} />}
-          </IconButton>
+          {user
+            ? (
+              <IconButton edge="end" color="inherit" aria-label="open user menu" onClick={openMenu}>
+                <Avatar alt={user.name} className={classes.avatar}>{user.name.split(' ').map((n) => n[0]).join('').toUpperCase()}</Avatar>
+              </IconButton>
+            )
+            : <Button variant="contained" color="primary" href="/auth/google">Login</Button>}
           <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
-            {user && <MenuItem>{`Hey, ${user.name.split(' ')[0]}!`}</MenuItem>}
-            {user && <Divider />}
-            <MenuItem component="a" href={user ? '/auth/logout' : '/auth/google'} onClick={closeMenu}>{user ? 'Log Out' : 'Log In'}</MenuItem>
+            <MenuItem component="a" href="/auth/logout" onClick={closeMenu}>Log Out</MenuItem>
           </Menu>
         </Toolbar>
       </AppBar>
