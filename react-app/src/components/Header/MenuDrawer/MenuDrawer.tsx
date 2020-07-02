@@ -9,17 +9,17 @@ import ListItemText from '@material-ui/core/ListItemText';
 import FacebookIcon from 'mdi-material-ui/Facebook';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
-import HomeVariantIcon from 'mdi-material-ui/HomeVariant';
 import InstagramIcon from 'mdi-material-ui/Instagram';
 import TshirtCrewIcon from 'mdi-material-ui/TshirtCrew';
 import TwitchIcon from 'mdi-material-ui/Twitch';
 import TwitterIcon from 'mdi-material-ui/Twitter';
 import WaveIcon from 'mdi-material-ui/Hail';
 
+import TigerLogoColorIcon from '../../../icons/TigerLogoColor';
 import useUser from '../../../utils/user';
 
 const routes = [
-  { text: 'Home', to: '/', icon: <HomeVariantIcon /> },
+  { text: 'Home', to: '/', icon: <TigerLogoColorIcon /> },
   { text: 'Teams', to: '/teams', icon: <GamepadSquareIcon /> },
 ];
 const merch = [
