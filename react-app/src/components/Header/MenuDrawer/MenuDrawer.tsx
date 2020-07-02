@@ -7,7 +7,7 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FacebookIcon from 'mdi-material-ui/Facebook';
-import FileDocumentIcon from 'mdi-material-ui/FileDocumentOutline';
+import FileDocumentOutlineIcon from 'mdi-material-ui/FileDocumentOutline';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
 import GithubIcon from 'mdi-material-ui/Github';
@@ -37,7 +37,7 @@ const socials = [
   { text: 'Github', href: 'https://github.com/RITesports', icon: <GithubIcon htmlColor="#333" /> },
 ];
 const files = [
-  { text: 'Branding', href: '/RITEsports_BrandingGuide_7.pdf', icon: <FileDocumentIcon htmlColor="#505050" /> },
+  { text: 'Branding', href: '/RITEsports_BrandingGuide_7.pdf', icon: <FileDocumentOutlineIcon htmlColor="#505050" /> },
 ];
 
 type Props = {
