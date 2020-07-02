@@ -57,7 +57,7 @@ const Header: React.FC = () => {
                 <Avatar alt={user.name} className={classes.avatar}>{user.name.split(' ').map((n) => n[0]).join('').toUpperCase()}</Avatar>
               </IconButton>
             )
-            : <Button variant="contained" color="primary" href="/auth/google">Login</Button>}
+            : <Button variant="contained" color="primary" href="/auth/google">Log in</Button>}
           <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
             <MenuItem component="a" href="/auth/logout" onClick={closeMenu}>Log Out</MenuItem>
           </Menu>
