@@ -7,8 +7,10 @@ import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import FacebookIcon from 'mdi-material-ui/Facebook';
+import FileIcon from 'mdi-material-ui/FileDocumentOutline';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
+import GithubIcon from 'mdi-material-ui/Github';
 import HomeVariantIcon from 'mdi-material-ui/HomeVariant';
 import InstagramIcon from 'mdi-material-ui/Instagram';
 import TshirtCrewIcon from 'mdi-material-ui/TshirtCrew';
@@ -32,6 +34,8 @@ const socials = [
   { text: 'Instagram', href: 'https://www.instagram.com/ritesports', icon: <InstagramIcon htmlColor="#e1306c" /> },
   { text: 'Twitch', href: 'https://www.twitch.tv/ritesports', icon: <TwitchIcon htmlColor="#6441a5" /> },
   { text: 'Discord', href: 'https://discordapp.com/invite/ritesports', icon: <DiscordIcon htmlColor="#7289da" /> },
+  { text: 'Github', href: 'https://github.com/RITesports', icon: <GithubIcon htmlColor="#333" /> },
+  { text: 'Branding', href: '/RITEsports_BrandingGuide_7.pdf', icon: <FileIcon htmlColor="#f25822" /> },
 ];
 
 type Props = {
