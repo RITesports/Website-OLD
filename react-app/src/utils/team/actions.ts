@@ -40,4 +40,5 @@ export type LeagueActions =
 export type PlayerActions =
   | { type: 'PLAYER_SET_USERNAME', division: Division, player: Player, username: string }
   | { type: 'PLAYER_SET_ROLE', division: Division, player: Player, role: string }
+  | { type: 'PLAYER_SET_PROFILE_ID', division: Division, player: Player, profileId: string }
   | { type: 'PLAYER_SET_IMAGE_URL', division: Division, player: Player, imageUrl: string };
