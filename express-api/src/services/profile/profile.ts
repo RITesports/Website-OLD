@@ -1,9 +1,9 @@
 import { Profile, ProfileDocument } from '../../models/profile';
 
 /* Create */
-export const createProfile = async () => {
+export const createProfile = async (profile: Profile) => {
   try {
-    return await Profile.create();
+    return await Profile.create(profile);
   }
   catch (e) {
     throw Error('Error creating profile');
@@ -11,11 +11,11 @@ export const createProfile = async () => {
 };
 
 /* Read */
-export const findProfileByIdentifierOrId = async (identifierOrId: string) => {
+export const findProfileById = async (id: string) => {
   let profile: ProfileDocument | null;
 
   try {
-    profile = await Profile.findOne({ identifier: identifierOrId }) || await Profile.findById(identifierOrId);
+    profile = await Profile.findById(id);
   }
   catch (e) {
     console.error(e);
