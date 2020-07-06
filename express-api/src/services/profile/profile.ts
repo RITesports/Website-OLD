@@ -1,9 +1,9 @@
 import { Profile, ProfileDocument } from '../../models/profile';
 
 /* Create */
-export const createProfile = async (profile: Profile) => {
+export const createProfile = async () => {
   try {
-    return await Profile.create(profile);
+    return await Profile.create();
   }
   catch (e) {
     throw Error('Error creating profile');
