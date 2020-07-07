@@ -1,7 +1,7 @@
 export const banner = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/banner.jpg';
 export const Kitch = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/ktich.jpg';
 export const LogoDark = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/Logo_dark.png';
-export const logoCardMeme = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/logo-card-meme.png';
+export const logoCardMeme = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/logo-card-meme.png';
 export const RitchieBongo = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RitchieBongo.svg';
 export const RitchieBongoCursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/RitchieBongoCursor.png';
 export const RITEsportsWordmarkLongGray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_LongGray.svg';
