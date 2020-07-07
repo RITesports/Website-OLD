@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from 'react';
 import { Route, Switch } from 'react-router-dom';
+import Backdrop from '@material-ui/core/Backdrop';
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 import AdminRoute from './protected/Admin';
 import ManagerRoute from './protected/Manager';
@@ -12,7 +14,7 @@ const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Routes: React.FC = () => (
   <main style={{ overflowX: 'hidden' }}>
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<Backdrop open><CircularProgress color="primary" /></Backdrop>}>
       <Switch>
         <Route exact path="/"><Home /></Route>
 
