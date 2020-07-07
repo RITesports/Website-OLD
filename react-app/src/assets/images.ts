@@ -3,6 +3,7 @@ export const Kitch = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/pu
 export const LogoDark = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/Logo_dark.png';
 export const logoCardMeme = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/logo-card-meme.png';
 export const RitchieBongo = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RitchieBongo.svg';
+export const RitchieBongoCursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/RitchieBongoCursor.png';
 export const RITEsportsWordmarkLongGray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_LongGray.svg';
 export const RITEsportsWordmarkLongWhite = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_LongWhite.svg';
 export const RITEsportsWordmarkStackedGray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_StackedGray.svg';
