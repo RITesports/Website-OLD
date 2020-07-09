@@ -48,7 +48,6 @@ const names = [
   'Connor Dudarchik',
   'Satyendra Emani',
   'Raquel Estrada',
-  'Joseph Farrell',
   'Ohan Fillbach',
   'Joe Gallo',
   'Buck Gandley',
@@ -65,7 +64,6 @@ const names = [
   'Jacob Heimes',
   'Neil Hiranandani',
   'Sanjay Hiranandani',
-  'Evan Hirsh',
   'Willie Hirsh',
   'Maximilian Italiaander',
   'Darius James',
@@ -135,7 +133,6 @@ const names = [
   'Cleon Walden',
   'Trevor Walden',
   'Gregory Waxman',
-  'Chad Weeden',
   'Elizabeth Weller',
   'Mistie West',
   'Stevie West',
@@ -168,7 +165,7 @@ const Founders: React.FC = () => {
   return (
     <Container maxWidth="xl">
       <Typography variant="h3" align="center" className={classes.title}>Founders</Typography>
-      <Typography variant="h5" align="center" className={classes.messages}>RIT Esports was founded by Evan Hirsh, Peter Lam, Andy Kukielka, Joe Farrell, and Chad Weeden, along with the support of:</Typography>
+      <Typography variant="h5" align="center" className={classes.messages}>RIT Esports was founded by Evan Hirsh, Peter Lam, Andy Kukielka, Joseph Farrell, and Chad Weeden, along with the support of:</Typography>
       <Grid container>
         {names.map((name) => (
           <Grid key={name} item xs={12} sm={4}>
