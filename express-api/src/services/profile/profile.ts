@@ -31,7 +31,7 @@ export const updateProfile = async (profile: Profile) => {
   let updatedProfile: ProfileDocument | null;
 
   try {
-    // @ts-ignore
+    // @ts-ignore: Overwrite is a property but typings aren't updated for mongoose
     updatedProfile = await Profile.findByIdAndUpdate(profile._id, profile, { new: true, overwrite: true });
     console.log(updatedProfile);
   }
