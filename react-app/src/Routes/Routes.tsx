@@ -5,6 +5,7 @@ import AdminRoute from './protected/Admin';
 import ManagerRoute from './protected/Manager';
 
 const Home = lazy(() => import('../pages/Home'));
+const Founders = lazy(() => import('../pages/Founders'));
 const Team = lazy(() => import('../pages/Team'));
 const TeamEdit = lazy(() => import('../pages/TeamEdit'));
 const Teams = lazy(() => import('../pages/Teams'));
@@ -15,6 +16,8 @@ const Routes: React.FC = () => (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route exact path="/"><Home /></Route>
+
+        <Route exact path="/founders"><Founders /></Route>
 
         <Route exact path="/teams"><Teams /></Route>
         <AdminRoute exact path="/teams/createTeam"><TeamEdit /></AdminRoute>
