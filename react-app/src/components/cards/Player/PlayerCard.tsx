@@ -13,6 +13,12 @@ const useStyles = makeStyles({
     minHeight: '26rem',
     width: '18rem',
   },
+  cardTransition: {
+    transition: '.2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
+  },
 });
 
 type Props = {
@@ -28,7 +34,7 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
   };
 
   return (
-    <Card raised className={classes.card}>
+    <Card raised className={`${classes.card} ${player?.profileId ? classes.cardTransition : ''}`}>
       <CardMedia component="img" src={player?.imageUrl || playerNoPhoto} onError={onError} />
       <CardContent>
         {children || (player && (
