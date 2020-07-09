@@ -6,7 +6,7 @@ import ManagerRoute from './protected/Manager';
 
 const Home = lazy(() => import('../pages/Home'));
 
-const Profiles = lazy(() => import('../pages/Profiles'));
+const Profile = lazy(() => import('../pages/Profile'));
 const ProfileEdit = lazy(() => import('../pages/ProfileEdit'));
 
 const Team = lazy(() => import('../pages/Team'));
@@ -21,7 +21,7 @@ const Routes: React.FC = () => (
       <Switch>
         <Route exact path="/"><Home /></Route>
 
-        <Route exact path="/profiles/:id"><Profiles /></Route>
+        <Route exact path="/profiles/:id"><Profile /></Route>
         <Route exact path="/profiles/:id/edit"><ProfileEdit /></Route>
 
         <Route exact path="/teams"><Teams /></Route>
