@@ -19,12 +19,12 @@ import YoutubeIcon from 'mdi-material-ui/Youtube';
 import WaveIcon from 'mdi-material-ui/Hail';
 import CrownIcon from 'mdi-material-ui/CrownOutline';
 
-import { playerNoPhoto } from '../../../assets/images';
-import { banner } from '../../../assets/images';
+import { Typography } from '@material-ui/core';
+import { playerNoPhoto, banner } from '../../../assets/images';
+
 import GameForm from './Game';
 import Profile from '../../../models/profile';
 import { ProfileActions } from '../../../utils/profile';
-import { Typography } from '@material-ui/core';
 
 const useStyles = makeStyles((theme) => createStyles({
   profileInputs: {
@@ -81,6 +81,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                 <TextField
                   label="Name"
                   value={profile.name || ''}
+                  helperText={`${(profile.name?.length) || 0} / 32`}
                   variant="outlined"
                   margin="normal"
                   InputProps={{
@@ -88,7 +89,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                       <InputAdornment position="start">
                         <WaveIcon />
                       </InputAdornment>
-                    )
+                    ),
                   }}
                   onChange={(e) => dispatch({ type: 'PROFILE_SET_NAME', name: e.target.value })}
                   className={classes.profileInput}
@@ -98,7 +99,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   multiline
                   label="Bio"
                   value={profile.bio || ''}
-                  helperText={` ${profile.bio?.length === 69 ? 'Nice' : (profile.bio?.length || 0)} / 160`}
+                  helperText={`${(profile.bio?.length === 69 ? 'Nice' : profile.bio?.length) || 0} / 160`}
                   variant="outlined"
                   margin="normal"
                   onChange={(e) => dispatch({ type: 'PROFILE_SET_BIO', bio: e.target.value })}
@@ -118,7 +119,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <FacebookIcon htmlColor="#3b5998" />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_FACEBOOK_URL', facebookUrl: e.target.value })}
               className={classes.profileInput}
@@ -133,7 +134,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <TwitterIcon htmlColor="#1da1f2" />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_TWITTER_URL', twitterUrl: e.target.value })}
               className={classes.profileInput}
@@ -148,7 +149,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <InstagramIcon htmlColor="#e1306c" />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_INSTAGRAM_URL', instagramUrl: e.target.value })}
               className={classes.profileInput}
@@ -163,7 +164,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <YoutubeIcon htmlColor="#FF0000" />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_YOUTUBE_URL', youtubeUrl: e.target.value })}
               className={classes.profileInput}
@@ -178,7 +179,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <TelevisionIcon />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_STREAM_URL', streamUrl: e.target.value })}
               className={classes.profileInput}
@@ -193,7 +194,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
                   <InputAdornment position="start">
                     <DiscordIcon htmlColor="#7289da" />
                   </InputAdornment>
-                )
+                ),
               }}
               onChange={(e) => dispatch({ type: 'PROFILE_SET_DISCORD_USERNAME', discordUsername: e.target.value })}
               className={classes.profileInput}
@@ -206,9 +207,9 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
           <Typography variant="h4">Game Accounts</Typography>
         </Grid>
         {profile.games?.map((game) => (
-          <Grid item>
+          <Grid key={game._id} item>
             <GameForm game={game} dispatch={dispatch} />
-            <Button variant="contained" color="secondary" onClick={() => dispatch({ type: 'PROFILE_GAME_REMOVE', game: game })}><DeleteIcon /></Button>
+            <Button variant="contained" color="secondary" onClick={() => dispatch({ type: 'PROFILE_GAME_REMOVE', game })}><DeleteIcon /></Button>
           </Grid>
         ))}
         <Grid item>
