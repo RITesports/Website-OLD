@@ -31,7 +31,9 @@ export const updateProfile = async (profile: Profile) => {
   let updatedProfile: ProfileDocument | null;
 
   try {
-    updatedProfile = await Profile.findByIdAndUpdate(profile._id, profile, { new: true });
+    // @ts-ignore
+    updatedProfile = await Profile.findByIdAndUpdate(profile._id, profile, { new: true, overwrite: true });
+    console.log(updatedProfile);
   }
   catch (e) {
     console.error(e);
