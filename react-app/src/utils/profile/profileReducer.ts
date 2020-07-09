@@ -29,14 +29,14 @@ const profileReducer: Reducer<Profile, ProfileActions> = (prevProfile, action) =
     case 'PROFILE_SET_NAME':
       return { ...prevProfile, name: action.name || undefined };
     case 'PROFILE_SET_BIO':
-      return { ...prevProfile, bio: action.bio || undefined };
+      return { ...prevProfile, bio: (action.bio.length > 160 ? prevProfile.bio : action.bio) || undefined };
 
     case 'PROFILE_SET_FACEBOOK_URL':
       return { ...prevProfile, facebookUrl: action.facebookUrl || undefined };
     case 'PROFILE_SET_TWITTER_URL':
       return { ...prevProfile, twitterUrl: action.twitterUrl || undefined };
     case 'PROFILE_SET_INSTAGRAM_URL':
-      return { ...prevProfile, instgramUrl: action.instgramUrl || undefined };
+      return { ...prevProfile, instagramUrl: action.instagramUrl || undefined };
     case 'PROFILE_SET_YOUTUBE_URL':
       return { ...prevProfile, youtubeUrl: action.youtubeUrl || undefined };
     case 'PROFILE_SET_STREAM_URL':
