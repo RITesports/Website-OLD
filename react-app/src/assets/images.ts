@@ -9,6 +9,7 @@ export const RITEsportsWordmarkStackedGray = 'https://hooli-drive.sfo2.digitaloc
 export const RITEsportsWordmarkStackedWhite = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_StackedWhite.svg';
 export const shopnow = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/shopnow.png';
 export const merch2 = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/Merch_2.png';
+export const ritEsports8 = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/RIT_ESPORTS_8.jpg';
 
 export const controller = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/teams/controller.jpg';
 export const playerNoPhoto = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/players/player-no-photo.png';
