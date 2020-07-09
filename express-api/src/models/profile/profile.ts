@@ -23,7 +23,7 @@ export type ProfileDocument = Profile & Document;
 
 export const Profile = model<ProfileDocument>('Profile', new Schema<Profile>({
   name: String,
-  bio: String,
+  bio: { type: String, maxlength: 160 },
 
   facebookUrl: String,
   twitterUrl: String,
@@ -37,6 +37,9 @@ export const Profile = model<ProfileDocument>('Profile', new Schema<Profile>({
 
 export const ProfileJoi = Joi.object().keys({
   _id: Joi.string().regex(/^[a-f\d]{24}$/i),
+
+  name: Joi.string(),
+  bio: Joi.string().max(160),
 
   facebookUrl: Joi.string().uri(),
   twitterUrl: Joi.string().uri(),

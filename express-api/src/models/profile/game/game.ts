@@ -23,7 +23,7 @@ export const GameJoi = Joi.object().keys({
   _id: Joi.string().regex(/^[a-f\d]{24}$/i),
 
   name: Joi.string().required(),
-  plaform: Joi.string().valid('PC', 'PlayStation', 'Xbox', 'Switch', 'Other').required(),
+  platform: Joi.string().valid('PC', 'PlayStation', 'Xbox', 'Switch', 'Other').required(),
 
   username: Joi.string().required(),
   tracker: Joi.string().uri(),
