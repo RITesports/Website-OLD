@@ -5,10 +5,13 @@ import AdminRoute from './protected/Admin';
 import ManagerRoute from './protected/Manager';
 
 const Home = lazy(() => import('../pages/Home'));
+
 const Founders = lazy(() => import('../pages/Founders'));
+
 const Team = lazy(() => import('../pages/Team'));
 const TeamEdit = lazy(() => import('../pages/TeamEdit'));
 const Teams = lazy(() => import('../pages/Teams'));
+
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Routes: React.FC = () => (
@@ -24,9 +27,7 @@ const Routes: React.FC = () => (
         <Route exact path="/teams/:identifierOrId"><Team /></Route>
         <ManagerRoute exact path="/teams/:identifierOrId/edit"><TeamEdit /></ManagerRoute>
 
-        <Route>
-          <NotFound />
-        </Route>
+        <Route><NotFound /></Route>
       </Switch>
     </Suspense>
   </main>
