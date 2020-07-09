@@ -51,6 +51,19 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
         className={classes.playerInput}
       />
       <TextField
+        label="Player Profile ID"
+        value={player.profileId || ''}
+        error={!!player.profileId && !/^[a-f\d]{24}$/i.test(player.profileId)}
+        helperText={!!player.profileId && !/^[a-f\d]{24}$/i.test(player.profileId) && 'Player Profile ID Must Be Valid ID'}
+        variant="outlined"
+        margin="normal"
+        onChange={(e) => dispatch({
+          type: 'PLAYER_SET_PROFILE_ID', division, player, profileId: e.target.value,
+        })}
+        fullWidth
+        className={classes.playerInput}
+      />
+      <TextField
         label="Player Image URL"
         value={player.imageUrl || ''}
         variant="outlined"
