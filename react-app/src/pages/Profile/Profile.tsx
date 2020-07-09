@@ -1,28 +1,29 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
-import Alert from '@material-ui/lab/Alert';
-import { Button, CardMedia } from '@material-ui/core';
+import Button from '@material-ui/core/Button';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Divider from '@material-ui/core/Divider';
-import Typography from '@material-ui/core/Typography';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
+import List from '@material-ui/core/List';
+import ListItem from '@material-ui/core/ListItem';
+import ListItemIcon from '@material-ui/core/ListItemIcon';
+import ListItemText from '@material-ui/core/ListItemText';
+import Typography from '@material-ui/core/Typography';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import FacebookIcon from 'mdi-material-ui/Facebook';
 import InstagramIcon from 'mdi-material-ui/Instagram';
 import TelevisionIcon from 'mdi-material-ui/Television';
 import TwitterIcon from 'mdi-material-ui/Twitter';
 import YoutubeIcon from 'mdi-material-ui/Youtube';
-import List from '@material-ui/core/List';
-import ListItem from '@material-ui/core/ListItem';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import GameCard from '../../components/cards/Game';
 
-import { playerNoPhoto } from '../../assets/images';
-import { ritEsports8 } from '../../assets/images';
+import Alert from '@material-ui/lab/Alert';
+
+import { playerNoPhoto, ritEsports8 } from '../../assets/images';
+import GameCard from '../../components/cards/Game';
 import useUser from '../../utils/user';
 import useProfile from '../../utils/profile';
 
@@ -81,7 +82,11 @@ const Profiles: React.FC = () => {
           <>
             <Grid container direction="column" justify="center" alignItems="flex-start" className={classes.banner}>
               <Grid item className={classes.title}>
-                <Typography variant="h3">Player Profile {(user?.role === 'Admin' || user?.profileId === profile._id) && <Button variant="contained" color="primary" href={`/profiles/${profile._id}/edit`}>Edit</Button>}</Typography>
+                <Typography variant="h3">
+                  Player Profile
+                  {' '}
+                  {(user?.role === 'Admin' || user?.profileId === profile._id) && <Button variant="contained" color="primary" href={`/profiles/${profile._id}/edit`}>Edit</Button>}
+                </Typography>
               </Grid>
             </Grid>
             <Grid container direction="row" justify="center" alignItems="center" spacing={3} className={classes.detailsGrid}>
@@ -97,30 +102,42 @@ const Profiles: React.FC = () => {
               </Grid>
               <Grid item xs={12} sm={3}>
                 <List>
-                  {profile.facebookUrl && (<ListItem component="a" button href={profile.facebookUrl} target="_blank" rel="noopener noreferrer">
-                    <ListItemIcon><FacebookIcon htmlColor="#3b5998" fontSize="large" /></ListItemIcon>
-                    <ListItemText>Facebook</ListItemText>
-                  </ListItem>)}
-                  {profile.twitterUrl && (<ListItem component="a" button href={profile.twitterUrl} target="_blank" rel="noopener noreferrer">
-                    <ListItemIcon><TwitterIcon htmlColor="#1da1f2" fontSize="large" /></ListItemIcon>
-                    <ListItemText>Twitter</ListItemText>
-                  </ListItem>)}
-                  {profile.instagramUrl && (<ListItem component="a" button href={profile.instagramUrl} target="_blank" rel="noopener noreferrer">
-                    <ListItemIcon><InstagramIcon htmlColor="#e1306c" fontSize="large" /></ListItemIcon>
-                    <ListItemText>Instagram</ListItemText>
-                  </ListItem>)}
-                  {profile.youtubeUrl && (<ListItem component="a" button href={profile.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                    <ListItemIcon><YoutubeIcon htmlColor="#FF0000" fontSize="large" /></ListItemIcon>
-                    <ListItemText>YouTube</ListItemText>
-                  </ListItem>)}
-                  {profile.streamUrl && (<ListItem component="a" button href={profile.streamUrl} target="_blank" rel="noopener noreferrer">
-                    <ListItemIcon><TelevisionIcon fontSize="large" /></ListItemIcon>
-                    <ListItemText>Stream</ListItemText>
-                  </ListItem>)}
-                  {profile.discordUsername && (<ListItem>
-                    <ListItemIcon><DiscordIcon htmlColor="#7289da" fontSize="large" /></ListItemIcon>
-                    <ListItemText>{profile.discordUsername}</ListItemText>
-                  </ListItem>)}
+                  {profile.facebookUrl && (
+                    <ListItem component="a" button href={profile.facebookUrl} target="_blank" rel="noopener noreferrer">
+                      <ListItemIcon><FacebookIcon htmlColor="#3b5998" fontSize="large" /></ListItemIcon>
+                      <ListItemText>Facebook</ListItemText>
+                    </ListItem>
+                  )}
+                  {profile.twitterUrl && (
+                    <ListItem component="a" button href={profile.twitterUrl} target="_blank" rel="noopener noreferrer">
+                      <ListItemIcon><TwitterIcon htmlColor="#1da1f2" fontSize="large" /></ListItemIcon>
+                      <ListItemText>Twitter</ListItemText>
+                    </ListItem>
+                  )}
+                  {profile.instagramUrl && (
+                    <ListItem component="a" button href={profile.instagramUrl} target="_blank" rel="noopener noreferrer">
+                      <ListItemIcon><InstagramIcon htmlColor="#e1306c" fontSize="large" /></ListItemIcon>
+                      <ListItemText>Instagram</ListItemText>
+                    </ListItem>
+                  )}
+                  {profile.youtubeUrl && (
+                    <ListItem component="a" button href={profile.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                      <ListItemIcon><YoutubeIcon htmlColor="#FF0000" fontSize="large" /></ListItemIcon>
+                      <ListItemText>YouTube</ListItemText>
+                    </ListItem>
+                  )}
+                  {profile.streamUrl && (
+                    <ListItem component="a" button href={profile.streamUrl} target="_blank" rel="noopener noreferrer">
+                      <ListItemIcon><TelevisionIcon fontSize="large" /></ListItemIcon>
+                      <ListItemText>Stream</ListItemText>
+                    </ListItem>
+                  )}
+                  {profile.discordUsername && (
+                    <ListItem>
+                      <ListItemIcon><DiscordIcon htmlColor="#7289da" fontSize="large" /></ListItemIcon>
+                      <ListItemText>{profile.discordUsername}</ListItemText>
+                    </ListItem>
+                  )}
                 </List>
               </Grid>
               <Grid item container justify="space-evenly" alignItems="center" spacing={2} xs={12} sm={7}>
@@ -138,7 +155,8 @@ const Profiles: React.FC = () => {
                       <Grid item xs={12}>
                         <GameCard game={game} />
                       </Grid>
-                    )))}
+                    ))
+                )}
               </Grid>
             </Grid>
           </>
