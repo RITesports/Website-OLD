@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
+import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
 import Division from '../../../../models/team/division';
@@ -18,7 +20,13 @@ const DivisionDetails: React.FC<Props> = ({ division }) => (
     <Grid item container justify="center" spacing={5}>
       {division.players?.map((player) => (
         <Grid key={player._id} item>
-          <PlayerCard player={player} />
+          {player.profileId
+            ? (
+              <Link component={RouterLink} to={`/profiles/${player.profileId}`}>
+                <PlayerCard player={player} />
+              </Link>
+            )
+            : <PlayerCard player={player} />}
         </Grid>
       ))}
     </Grid>
