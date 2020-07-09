@@ -27,7 +27,7 @@ const profileReducer: Reducer<Profile, ProfileActions> = (prevProfile, action) =
       return action.profile;
 
     case 'PROFILE_SET_NAME':
-      return { ...prevProfile, name: action.name || undefined };
+      return { ...prevProfile, name: (action.name.length > 32 ? prevProfile.name : action.name) || undefined };
     case 'PROFILE_SET_BIO':
       return { ...prevProfile, bio: (action.bio.length > 160 ? prevProfile.bio : action.bio) || undefined };
 
