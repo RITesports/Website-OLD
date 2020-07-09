@@ -5,9 +5,14 @@ import AdminRoute from './protected/Admin';
 import ManagerRoute from './protected/Manager';
 
 const Home = lazy(() => import('../pages/Home'));
+
+const Profiles = lazy(() => import('../pages/Profiles'));
+const ProfileEdit = lazy(() => import('../pages/ProfileEdit'));
+
 const Team = lazy(() => import('../pages/Team'));
 const TeamEdit = lazy(() => import('../pages/TeamEdit'));
 const Teams = lazy(() => import('../pages/Teams'));
+
 const NotFound = lazy(() => import('../pages/NotFound'));
 
 const Routes: React.FC = () => (
@@ -15,6 +20,9 @@ const Routes: React.FC = () => (
     <Suspense fallback={<div>Loading...</div>}>
       <Switch>
         <Route exact path="/"><Home /></Route>
+
+        <Route exact path="/profiles/:id"><Profiles /></Route>
+        <Route exact path="/profiles/:id/edit"><ProfileEdit /></Route>
 
         <Route exact path="/teams"><Teams /></Route>
         <AdminRoute exact path="/teams/createTeam"><TeamEdit /></AdminRoute>
