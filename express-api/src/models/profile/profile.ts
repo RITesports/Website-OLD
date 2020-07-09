@@ -46,7 +46,7 @@ export const ProfileJoi = Joi.object().keys({
   instagramUrl: Joi.string().uri(),
   youtubeUrl: Joi.string().uri(),
   streamUrl: Joi.string().uri(),
-  discordUsername: Joi.string().regex(/.*#\d{4}/i),
+  discordUsername: Joi.string().regex(/.+#\d{4}/i),
 
   games: Joi.array().items(GameJoi),
 });
