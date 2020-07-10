@@ -6,6 +6,7 @@ import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
+import AccountCashIcon from 'mdi-material-ui/AccountCash';
 import FacebookIcon from 'mdi-material-ui/Facebook';
 import FileDocumentOutlineIcon from 'mdi-material-ui/FileDocumentOutline';
 import DiscordIcon from 'mdi-material-ui/Discord';
@@ -23,6 +24,7 @@ import useUser from '../../../utils/user';
 const routes = [
   { text: 'Home', to: '/', icon: <TigerLogoColorIcon /> },
   { text: 'Teams', to: '/teams', icon: <GamepadSquareIcon /> },
+  { text: 'Founders', to: '/founders', icon: <AccountCashIcon /> },
 ];
 const merch = [
   { text: 'Sports Wear', href: 'https://metathreads.com/collections/rit-esports', icon: <TshirtCrewIcon htmlColor="#f25822" /> },
