@@ -24,7 +24,7 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
       <TextField
         required
         label="Game Title"
-        value={game.name || ''}
+        value={game.name}
         error={!game.name}
         helperText={!game.name && 'Game Title Required'}
         variant="outlined"
@@ -37,7 +37,7 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
         select
         required
         label="Platform"
-        value={game.platform || ''}
+        value={game.platform}
         error={!game.platform}
         helperText={!game.platform && 'Platform Required'}
         variant="outlined"
@@ -53,7 +53,7 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
       <TextField
         required
         label="Username"
-        value={game.username || ''}
+        value={game.username}
         error={!game.username}
         helperText={!game.username && 'Username Required'}
         variant="outlined"
