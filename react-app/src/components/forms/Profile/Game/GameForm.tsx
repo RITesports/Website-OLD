@@ -23,10 +23,10 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
     <>
       <TextField
         required
+        label="Game Title"
         value={game.name || ''}
         error={!game.name}
         helperText={!game.name && 'Game Title Required'}
-        label="Game Title"
         variant="outlined"
         margin="normal"
         fullWidth
@@ -36,11 +36,10 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
       <TextField
         select
         required
+        label="Platform"
         value={game.platform || ''}
         error={!game.platform}
         helperText={!game.platform && 'Platform Required'}
-        id="select"
-        label="Platform"
         variant="outlined"
         margin="normal"
         fullWidth
@@ -53,10 +52,10 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
       </TextField>
       <TextField
         required
+        label="Username"
         value={game.username || ''}
         error={!game.username}
         helperText={!game.username && 'Username Required'}
-        label="Username"
         variant="outlined"
         margin="normal"
         fullWidth
@@ -64,8 +63,8 @@ const GameForm: React.FC<Props> = ({ game, dispatch }) => {
         className={classes.textInput}
       />
       <TextField
-        value={game.tracker || ''}
         label="Statistics Tracker URL"
+        value={game.tracker || ''}
         variant="outlined"
         margin="normal"
         fullWidth

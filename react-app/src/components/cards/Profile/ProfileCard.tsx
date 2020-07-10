@@ -46,7 +46,6 @@ const ProfileCard: React.FC<Props> = ({ profile, children }) => {
           </>
         ))}
       </CardContent>
-
     </Card>
   );
 };

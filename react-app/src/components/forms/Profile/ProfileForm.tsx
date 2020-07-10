@@ -178,7 +178,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
       </Grid>
       <Grid container direction="column" alignItems="center" spacing={3} className={classes.gameAccounts}>
         <Grid item>
-          <Typography variant="h4">Game Accounts</Typography>
+          <Typography variant="h4">{`Game Accounts ${profile.games?.length || 0} / 20`}</Typography>
         </Grid>
         {profile.games?.map((game, index, gamesArr) => (
           <Grid key={game._id} item>
