@@ -59,7 +59,7 @@ const Profiles: React.FC = () => {
           <>
             <Grid container alignItems="center" className={classes.banner}>
               <Grid item className={classes.title}>
-                <Typography variant="h3">Player Profile</Typography>
+                <Typography variant="h3">User Profile</Typography>
                 {canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary">Edit</Button>}
               </Grid>
             </Grid>

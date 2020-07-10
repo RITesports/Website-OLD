@@ -59,7 +59,7 @@ const ProfileEdit: React.FC = () => {
       {error && <Alert severity="error">{error}</Alert>}
       <Grid container alignItems="center" className={classes.banner}>
         <Grid item>
-          <Typography variant="h3" className={classes.title}>Player Profile</Typography>
+          <Typography variant="h3" className={classes.title}>User Profile</Typography>
         </Grid>
       </Grid>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
