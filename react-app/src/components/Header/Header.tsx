@@ -64,6 +64,7 @@ const Header: React.FC = () => {
           {user && (
             <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
               <MenuItem component={RouterLink} to={`/profiles/${user.profileId}`} onClick={closeMenu}>My Profile</MenuItem>
+              {user.teamId && <MenuItem component={RouterLink} to={`/teams/${user.teamId}`} onClick={closeMenu}>My Team</MenuItem>}
               <Divider />
               <MenuItem component="a" href="/auth/logout" onClick={closeMenu}>Log Out</MenuItem>
             </Menu>
