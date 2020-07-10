@@ -32,7 +32,7 @@ const TeamEdit: React.FC = () => {
 
   const newTeam = !identifierOrId;
 
-  const handleSumbit = (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     event.stopPropagation();
 
@@ -66,7 +66,7 @@ const TeamEdit: React.FC = () => {
   return (
     <>
       {error && <Alert severity="error">{error}</Alert>}
-      <form noValidate autoComplete="off" onSubmit={handleSumbit}>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
         <Grid container direction="column" alignItems="center" spacing={5}>
           <Grid item className={classes.top}>
             <Button type="submit" size="large" variant="contained" color="primary">Save Team</Button>

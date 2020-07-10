@@ -30,10 +30,10 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
         helperText={!player.username && 'Player Username Required'}
         variant="outlined"
         margin="normal"
+        fullWidth
         onChange={(e) => dispatch({
           type: 'PLAYER_SET_USERNAME', division, player, username: e.target.value,
         })}
-        fullWidth
         className={classes.playerInput}
       />
       <TextField
@@ -44,10 +44,23 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
         helperText={!player.role && 'Player Role Required'}
         variant="outlined"
         margin="normal"
+        fullWidth
         onChange={(e) => dispatch({
           type: 'PLAYER_SET_ROLE', division, player, role: e.target.value,
         })}
+        className={classes.playerInput}
+      />
+      <TextField
+        label="Player Profile ID"
+        value={player.profileId || ''}
+        error={!!player.profileId && !/^[a-f\d]{24}$/i.test(player.profileId)}
+        helperText={!!player.profileId && !/^[a-f\d]{24}$/i.test(player.profileId) && 'Invalid Profile ID'}
+        variant="outlined"
+        margin="normal"
         fullWidth
+        onChange={(e) => dispatch({
+          type: 'PLAYER_SET_PROFILE_ID', division, player, profileId: e.target.value,
+        })}
         className={classes.playerInput}
       />
       <TextField
@@ -55,10 +68,10 @@ const PlayerForm: React.FC<Props> = ({ division, player, dispatch }) => {
         value={player.imageUrl || ''}
         variant="outlined"
         margin="normal"
+        fullWidth
         onChange={(e) => dispatch({
           type: 'PLAYER_SET_IMAGE_URL', division, player, imageUrl: e.target.value,
         })}
-        fullWidth
         className={classes.playerInput}
       />
     </>

@@ -3,6 +3,7 @@ export default interface User {
 
   name: string;
   email: string;
+  profileId: string;
 
   role: 'Admin' | 'Manager' | 'User';
   teamId?: string;

@@ -14,8 +14,10 @@ const playerReducer: Reducer<Player, PlayerActions> = (prevPlayer, action) => {
       return { ...prevPlayer, username: action.username };
     case 'PLAYER_SET_ROLE':
       return { ...prevPlayer, role: action.role };
+    case 'PLAYER_SET_PROFILE_ID':
+      return { ...prevPlayer, profileId: action.profileId || undefined };
     case 'PLAYER_SET_IMAGE_URL':
-      return { ...prevPlayer, imageUrl: action.imageUrl ? action.imageUrl : undefined };
+      return { ...prevPlayer, imageUrl: action.imageUrl || undefined };
     default:
       return prevPlayer;
   }
@@ -28,7 +30,7 @@ const leagueReducer: Reducer<League, LeagueActions> = (prevLeague, action) => {
     case 'LEAGUE_SET_URL':
       return { ...prevLeague, url: action.url };
     case 'LEAGUE_SET_IMAGE_URL':
-      return { ...prevLeague, imageUrl: action.imageUrl ? action.imageUrl : undefined };
+      return { ...prevLeague, imageUrl: action.imageUrl || undefined };
 
     default:
       return prevLeague;
@@ -38,7 +40,7 @@ const leagueReducer: Reducer<League, LeagueActions> = (prevLeague, action) => {
 const divisionReducer: Reducer<Division, DivisionActions> = (prevDivision, action) => {
   switch (action.type) {
     case 'DIVISION_SET_NAME':
-      return { ...prevDivision, name: action.name ? action.name : undefined };
+      return { ...prevDivision, name: action.name || undefined };
 
     case 'DIVISION_LEAGUE_ADD':
       return { ...prevDivision, leagues: prevDivision.leagues ? [...prevDivision.leagues, new League()] : [new League()] };
@@ -109,6 +111,7 @@ const divisionReducer: Reducer<Division, DivisionActions> = (prevDivision, actio
 
     case 'PLAYER_SET_USERNAME':
     case 'PLAYER_SET_ROLE':
+    case 'PLAYER_SET_PROFILE_ID':
     case 'PLAYER_SET_IMAGE_URL':
       return { ...prevDivision, players: prevDivision.players?.map((player) => (player === action.player ? playerReducer(player, action) : player)) };
 
@@ -144,7 +147,6 @@ const teamReducer: Reducer<Team, TeamActions> = (prevTeam, action) => {
         }
       }
       return prevTeam;
-
     case 'TEAM_DIVISION_DOWN':
       if (prevTeam.divisions) {
         const index = prevTeam.divisions.indexOf(action.division);
@@ -175,6 +177,7 @@ const teamReducer: Reducer<Team, TeamActions> = (prevTeam, action) => {
     // fallthrough
     case 'PLAYER_SET_USERNAME':
     case 'PLAYER_SET_ROLE':
+    case 'PLAYER_SET_PROFILE_ID':
     case 'PLAYER_SET_IMAGE_URL':
       return { ...prevTeam, divisions: prevTeam.divisions?.map((division) => (division === action.division ? divisionReducer(division, action) : division)) };
 

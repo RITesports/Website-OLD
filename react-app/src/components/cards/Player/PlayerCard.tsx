@@ -1,7 +1,7 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
+import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
@@ -12,6 +12,12 @@ const useStyles = makeStyles({
   card: {
     minHeight: '26rem',
     width: '18rem',
+  },
+  cardTransition: {
+    transition: '.2s ease-in-out',
+    '&:hover': {
+      transform: 'scale(1.05)',
+    },
   },
 });
 
@@ -28,7 +34,7 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
   };
 
   return (
-    <Card raised className={classes.card}>
+    <Card raised className={`${classes.card} ${(player?.profileId && !children) ? classes.cardTransition : ''}`}>
       <CardMedia component="img" src={player?.imageUrl || playerNoPhoto} onError={onError} />
       <CardContent>
         {children || (player && (

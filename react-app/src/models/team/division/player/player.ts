@@ -6,5 +6,7 @@ export default class Player {
   username = '';
   role = '';
 
+  profileId?: string;
+
   imageUrl?: string;
 }
