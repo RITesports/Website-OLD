@@ -1,9 +1,9 @@
 import React from 'react';
 import Card from '@material-ui/core/Card';
-import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import useMediaQuery from '@material-ui/core/useMediaQuery';
 import Grid from '@material-ui/core/Grid';
 
 import Game from '../../../models/profile/game';
@@ -15,9 +15,6 @@ const useStyles = makeStyles({
       transform: 'scale(1.05)',
     },
   },
-  gameCard: {
-    height: '4rem',
-  },
 });
 
 type Props = {
@@ -26,18 +23,21 @@ type Props = {
 const PlayerCard: React.FC<Props> = ({ game }) => {
   const classes = useStyles();
 
+  const theme = useTheme();
+  const xsScreen = useMediaQuery(theme.breakpoints.down('xs'));
+
   return (
-    <Card raised className={`${classes.gameCard} ${game?.tracker ? classes.cardTransition : ''}`}>
+    <Card raised className={`${game?.tracker ? classes.cardTransition : ''}`}>
       <CardContent>
         <Grid container direction="row" justify="space-evenly" alignItems="center">
-          <Grid item xs={4}>
-            <Typography noWrap>{game.name}</Typography>
+          <Grid item xs={12} sm={4}>
+            <Typography align={xsScreen ? 'center' : 'left'} noWrap>{game.name}</Typography>
           </Grid>
-          <Grid item xs={4}>
+          <Grid item xs={12} sm={4}>
             <Typography align="center" noWrap>{game.platform}</Typography>
           </Grid>
-          <Grid item xs={4}>
-            <Typography noWrap>{game.username}</Typography>
+          <Grid item xs={12} sm={4}>
+            <Typography align={xsScreen ? 'center' : 'right'} noWrap>{game.username}</Typography>
           </Grid>
         </Grid>
       </CardContent>
