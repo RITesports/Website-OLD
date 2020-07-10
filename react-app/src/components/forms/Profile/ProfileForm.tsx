@@ -195,9 +195,11 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
             </Accordion>
           </Grid>
         ))}
-        <Grid item>
-          <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'PROFILE_GAME_ADD' })}>Add Game</Button>
-        </Grid>
+        {profile.games && profile.games.length < 20 && (
+          <Grid item>
+            <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'PROFILE_GAME_ADD' })}>Add Game</Button>
+          </Grid>
+        )}
       </Grid>
     </>
   );

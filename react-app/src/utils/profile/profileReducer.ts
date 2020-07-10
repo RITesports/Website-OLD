@@ -45,7 +45,12 @@ const profileReducer: Reducer<Profile, ProfileActions> = (prevProfile, action) =
       return { ...prevProfile, discordUsername: action.discordUsername || undefined };
 
     case 'PROFILE_GAME_ADD':
-      return { ...prevProfile, games: prevProfile.games ? [...prevProfile.games, new Game()] : [new Game()] };
+      if (prevProfile.games) {
+        if (prevProfile.games.length < 20) return { ...prevProfile, games: [...prevProfile.games, new Game()] };
+
+        return prevProfile;
+      }
+      return { ...prevProfile, games: [new Game()] };
     case 'PROFILE_GAME_REMOVE':
       return { ...prevProfile, games: prevProfile.games?.filter((game) => game !== action.game) };
     case 'PROFILE_GAME_UP':
