@@ -49,7 +49,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
 
   return (
     <>
-      <Grid container justify="center" spacing={3}>
+      <Grid container justify="center" alignItems="center" spacing={3}>
         <Grid item>
           <ProfileCard>
             <TextField
