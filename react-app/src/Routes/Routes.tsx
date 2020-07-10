@@ -26,7 +26,7 @@ const Routes: React.FC = () => (
         <Route exact path="/"><Home /></Route>
 
         <Route exact path="/founders"><Founders /></Route>
-        
+
         <Route exact path="/profiles/:id"><Profile /></Route>
         <Route exact path="/profiles/:id/edit"><ProfileEdit /></Route>
 
