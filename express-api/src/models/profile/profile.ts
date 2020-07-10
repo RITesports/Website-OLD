@@ -48,5 +48,5 @@ export const ProfileJoi = Joi.object().keys({
   streamUrl: Joi.string().uri(),
   discordUsername: Joi.string().regex(/.+#\d{4}/i),
 
-  games: Joi.array().items(GameJoi),
+  games: Joi.array().items(GameJoi).max(20),
 });
