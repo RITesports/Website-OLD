@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
+import axios from 'axios';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
-import { createStyles, makeStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
 
@@ -14,18 +14,17 @@ import useProfile from '../../utils/profile';
 
 const useStyles = makeStyles((theme) => createStyles({
   top: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(5),
   },
   title: {
     color: 'white',
-    padding: theme.spacing(6),
+    marginLeft: theme.spacing(1),
   },
   banner: {
     backgroundImage: `url(${ritEsports8})`,
     backgroundPosition: '50% 65%',
     backgroundSize: 'cover',
-    height: '10em',
-    minHeight: '5em',
+    height: theme.spacing(20),
   },
 }));
 
@@ -57,9 +56,9 @@ const ProfileEdit: React.FC = () => {
   return (
     <>
       {error && <Alert severity="error">{error}</Alert>}
-      <Grid container direction="column" justify="center" alignItems="flex-start" className={classes.banner}>
-        <Grid item className={classes.title}>
-          <Typography variant="h3">Player Profile</Typography>
+      <Grid container alignItems="center" className={classes.banner}>
+        <Grid item>
+          <Typography variant="h3" className={classes.title}>Player Profile</Typography>
         </Grid>
       </Grid>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
