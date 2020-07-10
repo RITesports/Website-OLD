@@ -14,16 +14,17 @@ import useProfile from '../../utils/profile';
 
 const useStyles = makeStyles((theme) => createStyles({
   top: {
-    marginTop: theme.spacing(5),
+    marginTop: theme.spacing(3),
   },
   title: {
     color: 'white',
-    marginLeft: theme.spacing(1),
+    paddingLeft: theme.spacing(1),
   },
   banner: {
     backgroundImage: `url(${ritEsports8})`,
     backgroundPosition: '50% 65%',
     backgroundSize: 'cover',
+
     height: theme.spacing(20),
   },
 }));
