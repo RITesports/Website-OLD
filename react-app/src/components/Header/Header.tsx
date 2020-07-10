@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { Link as RouterLink } from 'react-router-dom';
 import AppBar from '@material-ui/core/AppBar';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
+import Divider from '@material-ui/core/Divider';
 import Hidden from '@material-ui/core/Hidden';
 import IconButton from '@material-ui/core/IconButton';
 import Menu from '@material-ui/core/Menu';
@@ -32,6 +34,8 @@ const useStyles = makeStyles((theme) => createStyles({
 const Header: React.FC = () => {
   const classes = useStyles();
 
+  const user = useUser();
+
   const [open, setOpen] = useState(false);
   const toggleDrawer = () => setOpen((pOpen) => !pOpen);
 
@@ -39,7 +43,6 @@ const Header: React.FC = () => {
   const openMenu = (event: React.MouseEvent<HTMLElement>) => setAnchorEl(event.currentTarget);
   const closeMenu = () => setAnchorEl(null);
 
-  const user = useUser();
   return (
     <header>
       <AppBar position="sticky" color="secondary">
@@ -58,9 +61,13 @@ const Header: React.FC = () => {
               </IconButton>
             )
             : <Button variant="contained" color="primary" href="/auth/google">Log in</Button>}
-          <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
-            <MenuItem component="a" href="/auth/logout" onClick={closeMenu}>Log Out</MenuItem>
-          </Menu>
+          {user && (
+            <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
+              <MenuItem component={RouterLink} to={`/profiles/${user.profileId}`} onClick={closeMenu}>My Profile</MenuItem>
+              <Divider />
+              <MenuItem component="a" href="/auth/logout" onClick={closeMenu}>Log Out</MenuItem>
+            </Menu>
+          )}
         </Toolbar>
       </AppBar>
       <MenuDrawer open={open} onClose={toggleDrawer} />
