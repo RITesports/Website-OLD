@@ -39,6 +39,10 @@ const useStyles = makeStyles((theme) => createStyles({
 
     height: theme.spacing(20),
   },
+  gameAccounts: {
+    marginTop: theme.spacing(3),
+    marginBottom: theme.spacing(3),
+  },
 }));
 
 type Params = {
@@ -112,7 +116,7 @@ const Profiles: React.FC = () => {
                 )}
               </Grid>
               {!!profile.games?.length && (
-                <Grid container justify="center" alignItems="center" spacing={3}>
+                <Grid container justify="center" alignItems="center" spacing={3} className={classes.gameAccounts}>
                   <Grid item xs={12}>
                     <Typography variant="h4" align="center">Game Accounts</Typography>
                   </Grid>
