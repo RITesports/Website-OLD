@@ -16,6 +16,8 @@ export type ProfileActions =
 
   | { type: 'PROFILE_GAME_ADD' }
   | { type: 'PROFILE_GAME_REMOVE', game: Game }
+  | { type: 'PROFILE_GAME_UP', game: Game }
+  | { type: 'PROFILE_GAME_DOWN', game: Game }
 
   | GameActions;
 

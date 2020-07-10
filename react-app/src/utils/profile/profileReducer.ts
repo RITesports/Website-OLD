@@ -48,6 +48,32 @@ const profileReducer: Reducer<Profile, ProfileActions> = (prevProfile, action) =
       return { ...prevProfile, games: prevProfile.games ? [...prevProfile.games, new Game()] : [new Game()] };
     case 'PROFILE_GAME_REMOVE':
       return { ...prevProfile, games: prevProfile.games?.filter((game) => game !== action.game) };
+    case 'PROFILE_GAME_UP':
+      if (prevProfile.games) {
+        const index = prevProfile.games.indexOf(action.game);
+
+        if (index !== 0 && index !== -1) {
+          const gamesCopy = [...prevProfile.games];
+
+          [gamesCopy[index - 1], gamesCopy[index]] = [gamesCopy[index], gamesCopy[index - 1]];
+
+          return { ...prevProfile, games: gamesCopy };
+        }
+      }
+      return prevProfile;
+    case 'PROFILE_GAME_DOWN':
+      if (prevProfile.games) {
+        const index = prevProfile.games.indexOf(action.game);
+
+        if (index !== prevProfile.games.length - 1 && index !== -1) {
+          const gamesCopy = [...prevProfile.games];
+
+          [gamesCopy[index], gamesCopy[index + 1]] = [gamesCopy[index + 1], gamesCopy[index]];
+
+          return { ...prevProfile, games: gamesCopy };
+        }
+      }
+      return prevProfile;
 
     case 'GAME_SET_NAME':
     case 'GAME_SET_PLATFORM':

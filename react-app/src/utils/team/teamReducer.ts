@@ -147,7 +147,6 @@ const teamReducer: Reducer<Team, TeamActions> = (prevTeam, action) => {
         }
       }
       return prevTeam;
-
     case 'TEAM_DIVISION_DOWN':
       if (prevTeam.divisions) {
         const index = prevTeam.divisions.indexOf(action.division);
