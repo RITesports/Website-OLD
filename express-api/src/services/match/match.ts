@@ -5,7 +5,7 @@ import { Match, MatchDocument } from '../../models/match';
 /* Create */
 export const createMatch = async (match: Match) => {
   try {
-    return await Match.create({ ...match, teamId: Types.ObjectId(match.teamId) });
+    return await Match.create(match);
   }
   catch (e) {
     console.error(e);
