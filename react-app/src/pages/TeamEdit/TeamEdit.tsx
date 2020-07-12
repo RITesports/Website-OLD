@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => createStyles({
 }));
 
 type Params = {
-  identifierOrId: string | undefined
+  identifierOrId?: string;
 };
 const TeamEdit: React.FC = () => {
   const classes = useStyles();
