@@ -10,6 +10,10 @@ const Home = lazy(() => import('../pages/Home'));
 
 const Founders = lazy(() => import('../pages/Founders'));
 
+const Match = lazy(() => import('../pages/Match'));
+const MatchEdit = lazy(() => import('../pages/MatchEdit'));
+const Matches = lazy(() => import('../pages/Matches'));
+
 const Profile = lazy(() => import('../pages/Profile'));
 const ProfileEdit = lazy(() => import('../pages/ProfileEdit'));
 
@@ -25,6 +29,11 @@ const Routes: React.FC = () => (
         <Route exact path="/"><Home /></Route>
 
         <Route exact path="/founders"><Founders /></Route>
+
+        <Route exact path="/matches"><Matches /></Route>
+        <ManagerRoute exact path="/matches/createMatch"><MatchEdit /></ManagerRoute>
+        <Route exact path="/matches/:id"><Match /></Route>
+        <ManagerRoute exact path="/matches/:id/edit"><MatchEdit /></ManagerRoute>
 
         <Route exact path="/profiles/:id"><Profile /></Route>
         <Route exact path="/profiles/:id/edit"><ProfileEdit /></Route>
