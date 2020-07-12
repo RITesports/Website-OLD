@@ -13,6 +13,7 @@ import DiscordIcon from 'mdi-material-ui/Discord';
 import GamepadSquareIcon from 'mdi-material-ui/GamepadSquare';
 import GithubIcon from 'mdi-material-ui/Github';
 import InstagramIcon from 'mdi-material-ui/Instagram';
+import SwordCrossIcon from 'mdi-material-ui/SwordCross';
 import TshirtCrewIcon from 'mdi-material-ui/TshirtCrew';
 import TwitchIcon from 'mdi-material-ui/Twitch';
 import TwitterIcon from 'mdi-material-ui/Twitter';
@@ -24,6 +25,7 @@ import useUser from '../../../utils/user';
 const routes = [
   { text: 'Home', to: '/', icon: <TigerLogoColorIcon /> },
   { text: 'Teams', to: '/teams', icon: <GamepadSquareIcon /> },
+  { text: 'Matches', to: '/matches', icon: <SwordCrossIcon /> },
   { text: 'Founders', to: '/founders', icon: <AccountCashIcon /> },
 ];
 const merch = [
