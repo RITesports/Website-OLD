@@ -13,7 +13,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from 'mdi-material-ui/Menu';
 
 import MenuDrawer from './MenuDrawer';
-import { RITEsportsWordmarkLongWhite } from '../../assets/images';
+import { Wordmark_Long_White } from '../../assets/images';
 import useUser from '../../utils/user';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -51,7 +51,7 @@ const Header: React.FC = () => {
             <MenuIcon />
           </IconButton>
           <Hidden xsDown>
-            <img src={RITEsportsWordmarkLongWhite} alt="RIT Esports Wordmark Long White" className={classes.wordMark} />
+            <img src={Wordmark_Long_White} alt="RIT Esports Wordmark Long White" className={classes.wordMark} />
           </Hidden>
           <div className={classes.separator} />
           {user

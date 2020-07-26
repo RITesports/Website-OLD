@@ -8,7 +8,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
 
-import { ritEsports8 } from '../../assets/images';
+import { Banner_Profile } from '../../assets/images';
 import ProfileForm from '../../components/forms/Profile';
 import useProfile from '../../utils/profile';
 
@@ -18,14 +18,12 @@ const useStyles = makeStyles((theme) => createStyles({
   },
   title: {
     color: 'white',
-    paddingLeft: theme.spacing(1),
+    marginLeft: theme.spacing(1),
   },
   banner: {
-    backgroundImage: `url(${ritEsports8})`,
-    backgroundPosition: '50% 65%',
-    backgroundSize: 'cover',
-
     height: theme.spacing(20),
+
+    background: `url(${Banner_Profile}) 50% 65% / cover`,
   },
 }));
 

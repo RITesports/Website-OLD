@@ -6,7 +6,7 @@ import Divider from '@material-ui/core/Divider';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-import { playerNoPhoto } from '../../../assets/images';
+import { Member_No_Photo } from '../../../assets/images';
 import Profile from '../../../models/profile';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -29,14 +29,14 @@ const ProfileCard: React.FC<Props> = ({ profile, children }) => {
   const classes = useStyles();
 
   const onError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    if (e.currentTarget.src !== playerNoPhoto) {
-      e.currentTarget.src = playerNoPhoto;
+    if (e.currentTarget.src !== Member_No_Photo) {
+      e.currentTarget.src = Member_No_Photo;
     }
   };
 
   return (
     <Card raised className={classes.card}>
-      <CardMedia component="img" src={playerNoPhoto} onError={onError} />
+      <CardMedia component="img" src={Member_No_Photo} onError={onError} />
       <CardContent>
         {children || (profile && (
           <>
