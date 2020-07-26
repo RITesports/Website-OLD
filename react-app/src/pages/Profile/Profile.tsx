@@ -19,7 +19,7 @@ import YoutubeIcon from 'mdi-material-ui/Youtube';
 
 import Alert from '@material-ui/lab/Alert';
 
-import { ritEsports8 } from '../../assets/images';
+import { Banner_Profile } from '../../assets/images';
 import GameCard from '../../components/cards/Game';
 import ProfileCard from '../../components/cards/Profile';
 import useProfile from '../../utils/profile';
@@ -33,11 +33,9 @@ const useStyles = makeStyles((theme) => createStyles({
     marginLeft: theme.spacing(1),
   },
   banner: {
-    backgroundImage: `url(${ritEsports8})`,
-    backgroundPosition: '50% 65%',
-    backgroundSize: 'cover',
-
     height: theme.spacing(20),
+
+    background: `url(${Banner_Profile}) 50% 65% / cover`,
   },
 }));
 

@@ -1,16 +1,15 @@
-export const banner = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/banner.jpg';
-export const Kitch = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/ktich.jpg';
-export const LogoDark = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/Logo_dark.png';
-export const logoCardMeme = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/logo-card-meme.png';
-export const RitchieBongo = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RitchieBongo.svg';
-export const RitchieBongoCursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/RitchieBongoCursor.png';
-export const RITEsportsWordmarkLongGray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_LongGray.svg';
-export const RITEsportsWordmarkLongWhite = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_LongWhite.svg';
-export const RITEsportsWordmarkStackedGray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_StackedGray.svg';
-export const RITEsportsWordmarkStackedWhite = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/RITEsports_Wordmark_StackedWhite.svg';
-export const shopnow = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/shopnow.png';
-export const merch2 = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/misc/Merch_2.png';
-export const ritEsports8 = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/RIT_ESPORTS_8.jpg';
+// Snake case for assets
+/* eslint-disable @typescript-eslint/naming-convention */
 
-export const controller = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/teams/controller.jpg';
-export const playerNoPhoto = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/players/player-no-photo.png';
+export const Banner_Home = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Home.jpg';
+export const Banner_Profile = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Profile.jpg';
+export const Bongo_Ritchie_Cursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Bongo_Ritchie_Cursor.png';
+export const Kitch_Holding_Keyboard = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Kitch_Holding_Keyboard.jpg';
+export const TigerLogo_Meme = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/TigerLogo_Meme.png';
+export const Wordmark_Long_Gray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Long_Gray.svg';
+export const Wordmark_Long_White = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Long_White.svg';
+export const Wordmark_Stacked_Gray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Stacked_Gray.svg';
+export const Wordmark_Stacked_White = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Stacked_White.svg';
+
+export const Controller = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/teams/Controller.svg';
+export const Member_No_Photo = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/members/Member_No_Photo.png';

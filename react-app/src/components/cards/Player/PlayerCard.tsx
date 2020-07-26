@@ -5,7 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { playerNoPhoto } from '../../../assets/images';
+import { Member_No_Photo } from '../../../assets/images';
 import Player from '../../../models/team/division/player';
 
 const useStyles = makeStyles({
@@ -28,14 +28,14 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
   const classes = useStyles();
 
   const onError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
-    if (e.currentTarget.src !== playerNoPhoto) {
-      e.currentTarget.src = playerNoPhoto;
+    if (e.currentTarget.src !== Member_No_Photo) {
+      e.currentTarget.src = Member_No_Photo;
     }
   };
 
   return (
     <Card raised className={`${classes.card} ${(player?.profileId && !children) ? classes.cardTransition : ''}`}>
-      <CardMedia component="img" src={player?.imageUrl || playerNoPhoto} onError={onError} />
+      <CardMedia component="img" src={player?.imageUrl || Member_No_Photo} onError={onError} />
       <CardContent>
         {children || (player && (
           <>

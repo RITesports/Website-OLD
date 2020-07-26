@@ -2,7 +2,7 @@ import React from 'react';
 import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
-import { logoCardMeme } from '../../assets/images';
+import { TigerLogo_Meme } from '../../assets/images';
 
 const useStyles = makeStyles((theme) => createStyles({
   title: {
@@ -24,7 +24,7 @@ const NotFound: React.FC = () => {
   return (
     <>
       <Typography variant="h1" align="center" className={classes.title}>404: Page Not Found</Typography>
-      <img src={logoCardMeme} alt="Neil's Placeholder Tiger Logo" className={classes.tiger} />
+      <img src={TigerLogo_Meme} alt="Neil's Placeholder Tiger Logo" className={classes.tiger} />
     </>
   );
 };
