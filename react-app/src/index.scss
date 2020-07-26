@@ -1,12 +1,6 @@
-@import-normalize;
-
 html, body, #root {
   height: 100% !important;
-  margin: 0;
 }
-
-// Sticky footer
-// https://philipwalton.github.io/solved-by-flexbox/demos/sticky-footer/
 
 #root {
   display: flex;
