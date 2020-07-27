@@ -5,7 +5,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 
-import { Controller } from '../../../assets/images';
+import { Controller } from '../../../assets';
 import Team from '../../../models/team';
 
 const useStyles = makeStyles({

@@ -8,7 +8,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
 
-import { Banner_Profile } from '../../assets/images';
+import { Banner_Profile } from '../../assets';
 import ProfileForm from '../../components/forms/Profile';
 import useProfile from '../../utils/profile';
 

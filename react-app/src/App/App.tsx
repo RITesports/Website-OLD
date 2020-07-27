@@ -1,7 +1,7 @@
 import React from 'react';
 import Konami from 'react-konami-code';
 
-import { Bongo_Ritchie_Cursor } from '../assets/images';
+import { Bongo_Ritchie_Cursor } from '../assets';
 import Header from '../components/Header';
 import Routes from '../Routes';
 
