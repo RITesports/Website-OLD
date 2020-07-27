@@ -3,7 +3,7 @@
 
 export const Banner_Home = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Home.jpg';
 export const Banner_Profile = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Profile.jpg';
-export const Bongo_Ritchie_Cursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Bongo_Ritchie_Cursor.png';
+export const BongoRitchie_Cursor = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/BongoRitchie_Cursor.png';
 export const Kitch_Holding_Keyboard = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Kitch_Holding_Keyboard.jpg';
 export const Wordmark_Long_Gray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Long_Gray.svg';
 export const Wordmark_Long_White = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Long_White.svg';
