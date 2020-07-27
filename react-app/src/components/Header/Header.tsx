@@ -13,7 +13,7 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from 'mdi-material-ui/Menu';
 
 import MenuDrawer from './MenuDrawer';
-import { Wordmark_Long_White } from '../../assets/images';
+import { Wordmark_Long_White } from '../../assets';
 import useUser from '../../utils/user';
 
 const useStyles = makeStyles((theme) => createStyles({

@@ -19,7 +19,7 @@ import YoutubeIcon from 'mdi-material-ui/Youtube';
 
 import Alert from '@material-ui/lab/Alert';
 
-import { Banner_Profile } from '../../assets/images';
+import { Banner_Profile } from '../../assets';
 import GameCard from '../../components/cards/Game';
 import ProfileCard from '../../components/cards/Profile';
 import useProfile from '../../utils/profile';
