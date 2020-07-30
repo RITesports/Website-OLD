@@ -16,6 +16,7 @@ import InstagramIcon from 'mdi-material-ui/Instagram';
 import TshirtCrewIcon from 'mdi-material-ui/TshirtCrew';
 import TwitchIcon from 'mdi-material-ui/Twitch';
 import TwitterIcon from 'mdi-material-ui/Twitter';
+import YouTubeIcon from 'mdi-material-ui/Youtube';
 import WaveIcon from 'mdi-material-ui/Hail';
 
 import TigerLogoColorIcon from '../../../icons/TigerLogoColor';
@@ -34,6 +35,7 @@ const socials = [
   { text: 'Facebook', href: 'https://www.facebook.com/esportsrit', icon: <FacebookIcon htmlColor="#3b5998" /> },
   { text: 'Twitter', href: 'https://twitter.com/RITesports', icon: <TwitterIcon htmlColor="#1da1f2" /> },
   { text: 'Instagram', href: 'https://www.instagram.com/ritesports', icon: <InstagramIcon htmlColor="#e1306c" /> },
+  { text: 'YouTube', href: 'https://www.youtube.com/c/RITEsports', icon: <YouTubeIcon htmlColor="#ff0000" /> },
   { text: 'Twitch', href: 'https://www.twitch.tv/ritesports', icon: <TwitchIcon htmlColor="#6441a5" /> },
   { text: 'Discord', href: 'https://discordapp.com/invite/ritesports', icon: <DiscordIcon htmlColor="#7289da" /> },
   { text: 'Github', href: 'https://github.com/RITesports', icon: <GithubIcon htmlColor="#333" /> },
