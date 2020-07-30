@@ -18,7 +18,7 @@ import FacebookIcon from 'mdi-material-ui/Facebook';
 import InstagramIcon from 'mdi-material-ui/Instagram';
 import TelevisionIcon from 'mdi-material-ui/Television';
 import TwitterIcon from 'mdi-material-ui/Twitter';
-import YoutubeIcon from 'mdi-material-ui/Youtube';
+import YouTubeIcon from 'mdi-material-ui/Youtube';
 
 import GameForm from './Game';
 import ProfileCard from '../../cards/Profile';
@@ -127,14 +127,14 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
           />
           <TextField
             type="url"
-            label="Youtube URL"
+            label="YouTube URL"
             value={profile.youtubeUrl || ''}
             variant="outlined"
             margin="normal"
             InputProps={{
               startAdornment: (
                 <InputAdornment position="start">
-                  <YoutubeIcon htmlColor="#FF0000" />
+                  <YouTubeIcon htmlColor="#ff0000" />
                 </InputAdornment>
               ),
             }}

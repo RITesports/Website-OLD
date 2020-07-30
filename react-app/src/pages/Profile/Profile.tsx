@@ -15,7 +15,7 @@ import FacebookIcon from 'mdi-material-ui/Facebook';
 import InstagramIcon from 'mdi-material-ui/Instagram';
 import TelevisionIcon from 'mdi-material-ui/Television';
 import TwitterIcon from 'mdi-material-ui/Twitter';
-import YoutubeIcon from 'mdi-material-ui/Youtube';
+import YouTubeIcon from 'mdi-material-ui/Youtube';
 
 import Alert from '@material-ui/lab/Alert';
 
@@ -89,7 +89,7 @@ const Profiles: React.FC = () => {
                       )}
                       {profile.youtubeUrl && (
                         <ListItem component="a" button href={profile.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                          <ListItemIcon><YoutubeIcon htmlColor="#FF0000" fontSize="large" /></ListItemIcon>
+                          <ListItemIcon><YouTubeIcon htmlColor="#ff0000" fontSize="large" /></ListItemIcon>
                           <ListItemText>YouTube</ListItemText>
                         </ListItem>
                       )}
