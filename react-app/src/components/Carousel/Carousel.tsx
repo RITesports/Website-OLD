@@ -110,4 +110,4 @@ const Carousel: React.FC<Props> = ({
   );
 };
 
-export default React.memo(Carousel);
+export default Carousel;
