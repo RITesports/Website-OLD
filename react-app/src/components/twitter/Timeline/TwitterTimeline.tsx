@@ -77,5 +77,4 @@ const TwitterTimeline: React.FC<Props> = ({
   );
 };
 
-// memo becuase of the ...rest
-export default React.memo(TwitterTimeline);
+export default TwitterTimeline;
