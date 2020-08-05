@@ -125,8 +125,7 @@ const Home: React.FC = () => {
         <Grid item xs={12}>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSf_-nAyiReqDEjXy--c6Yk8l61IIEgOOUj79WfwBOdHYShsvQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
             <Alert severity="info" icon={<TigerLogoColorIcon />} className={classes.alert}>
-              <AlertTitle>Interested in joining RIT Esports?</AlertTitle>
-              Click here to fill out our general interest form!
+              <Typography>Interested in joining RIT Esports? Click here to fill out our general interest form!</Typography>
             </Alert>
           </Link>
         </Grid>
