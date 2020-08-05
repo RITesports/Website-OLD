@@ -21,17 +21,33 @@ const useStyles = makeStyles((theme) => createStyles({
     [theme.breakpoints.down('md')]: {
       height: theme.spacing(40),
     },
+    [theme.breakpoints.down('sm')]: {
+      height: theme.spacing(30),
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(25),
+    },
   },
   bannerImg: {
     height: '100%',
     width: '100%',
 
     objectFit: 'cover',
-    objectPosition: 'top left',
+    objectPosition: 'left',
   },
 
   brick: {
     height: theme.spacing(60),
+
+    [theme.breakpoints.down('md')]: {
+      height: theme.spacing(53),
+    },
+    [theme.breakpoints.down('sm')]: {
+      height: theme.spacing(43),
+    },
+    [theme.breakpoints.down('xs')]: {
+      height: theme.spacing(38),
+    },
   },
 
   carousel: {
@@ -54,7 +70,16 @@ const useStyles = makeStyles((theme) => createStyles({
 
   aboutUs: {
     height: '100%',
-    minHeight: theme.spacing(60),
+    [theme.breakpoints.down('md')]: {
+      minHeight: theme.spacing(53),
+    },
+    [theme.breakpoints.down('sm')]: {
+      minHeight: theme.spacing(43),
+    },
+    [theme.breakpoints.down('xs')]: {
+      minHeight: theme.spacing(38),
+    },
+
     padding: theme.spacing(3),
 
     backgroundColor: theme.palette.secondary.main,
