@@ -8,15 +8,14 @@ import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
-import AlertTitle from '@material-ui/lab/AlertTitle';
 
 import Brick from './Brick';
 import {
   Banner_Home, Banner_Welcome_Back, Kitch_Holding_Keyboard, Merch_Casual, Merch_Sports,
 } from '../../assets';
-import TigerLogoColorIcon from '../../icons/TigerLogoColor';
 import Carousel from '../../components/Carousel';
 import TwitterTimeline from '../../components/twitter/Timeline';
+import TigerLogoColorIcon from '../../icons/TigerLogoColor';
 
 const useStyles = makeStyles((theme) => createStyles({
   banner: {
