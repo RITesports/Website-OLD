@@ -70,6 +70,8 @@ const useStyles = makeStyles((theme) => createStyles({
 
   aboutUs: {
     height: '100%',
+
+    minHeight: theme.spacing(60),
     [theme.breakpoints.down('md')]: {
       minHeight: theme.spacing(53),
     },
