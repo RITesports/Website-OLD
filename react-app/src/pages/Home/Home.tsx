@@ -32,12 +32,19 @@ const useStyles = makeStyles((theme) => createStyles({
       height: theme.spacing(25),
     },
   },
-  bannerImg: {
+  bannerImgHome: {
     height: '100%',
     width: '100%',
 
     objectFit: 'cover',
     objectPosition: 'left',
+  },
+  bannerImgWelcomeBack: {
+    height: '100%',
+    width: '100%',
+
+    objectFit: 'cover',
+    objectPosition: 'right',
   },
 
   alert: {
@@ -122,8 +129,8 @@ const Home: React.FC = () => {
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Carousel className={classes.banner}>
-            <img src={Banner_Welcome_Back} alt="Welcome Back Banner" className={classes.bannerImg} />
-            <img src={Banner_Home} alt="Home Banner" className={classes.bannerImg} />
+            <img src={Banner_Home} alt="Home Banner" className={classes.bannerImgHome} />
+            <img src={Banner_Welcome_Back} alt="Welcome Back Banner" className={classes.bannerImgWelcomeBack} />
           </Carousel>
         </Grid>
         <Grid item xs={12}>
