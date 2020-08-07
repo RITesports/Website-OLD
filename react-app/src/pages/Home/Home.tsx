@@ -8,6 +8,7 @@ import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import Alert from '@material-ui/lab/Alert';
+import AlertTitle from '@material-ui/lab/AlertTitle';
 
 import Brick from './Brick';
 import {
@@ -39,6 +40,16 @@ const useStyles = makeStyles((theme) => createStyles({
     objectPosition: 'left',
   },
 
+  alert: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+
+    borderRadius: 0,
+  },
+  alertIcon: {
+    alignItems: 'center',
+  },
+
   brick: {
     height: theme.spacing(60),
 
@@ -53,12 +64,6 @@ const useStyles = makeStyles((theme) => createStyles({
     },
   },
 
-  alert: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-
-    borderRadius: 0,
-  },
   carousel: {
     height: '100%',
   },
@@ -123,8 +128,9 @@ const Home: React.FC = () => {
         </Grid>
         <Grid item xs={12}>
           <Link href="https://docs.google.com/forms/d/e/1FAIpQLSf_-nAyiReqDEjXy--c6Yk8l61IIEgOOUj79WfwBOdHYShsvQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
-            <Alert severity="info" icon={<TigerLogoColorIcon />} className={classes.alert}>
-              <Typography>Interested in joining RIT Esports? Click here to fill out our general interest form!</Typography>
+            <Alert severity="info" icon={<TigerLogoColorIcon />} classes={{ icon: classes.alertIcon }} className={classes.alert}>
+              <AlertTitle>Interested in joining RIT Esports?</AlertTitle>
+              Click here to fill out our general interest form!
             </Alert>
           </Link>
         </Grid>
