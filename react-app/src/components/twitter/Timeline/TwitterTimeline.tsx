@@ -56,17 +56,19 @@ const TwitterTimeline: React.FC<Props> = ({
 
   useEffect(() => {
     if (twitterTimeline.current) {
-      window.twttr.widgets.createTimeline(
-        rest,
-        twitterTimeline.current,
-        {
-          chrome: `${noHeader ? 'noheader ' : ''}${noFooter ? 'nofooter ' : ''}${noBorders ? 'noborders ' : ''}${transparent ? 'transparent ' : ''}${noScrollbar ? 'noscrollbar ' : ''}`.trim(),
-          height: height || getCalculatedHeight() || 600,
-          ...tweetLimit && (1 <= tweetLimit && tweetLimit <= 20) && { tweetLimit },
-          ...borderColor && { borderColor },
-          ...ariaPolite && { ariaPolite },
-        },
-      );
+      window.twttr.ready((twttr) => {
+        twttr.widgets.createTimeline(
+          rest,
+          twitterTimeline.current,
+          {
+            chrome: `${noHeader ? 'noheader ' : ''}${noFooter ? 'nofooter ' : ''}${noBorders ? 'noborders ' : ''}${transparent ? 'transparent ' : ''}${noScrollbar ? 'noscrollbar ' : ''}`.trim(),
+            height: height || getCalculatedHeight() || 600,
+            ...tweetLimit && (1 <= tweetLimit && tweetLimit <= 20) && { tweetLimit },
+            ...borderColor && { borderColor },
+            ...ariaPolite && { ariaPolite },
+          },
+        ).catch(() => { });
+      });
     }
   }, [noHeader, noFooter, noBorders, transparent, noScrollbar, height, tweetLimit, borderColor, ariaPolite, rest]);
 

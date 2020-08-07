@@ -1,16 +1,20 @@
+type Twttr = {
+  widgets: {
+    /* eslint-disable @typescript-eslint/no-explicit-any */
+    // TODO: actually type props
+    createShareButton: (...props: any) => Promise<HTMLElement>;
+    createFollowButton: (...props: any) => Promise<HTMLElement>;
+    createHashtagButton: (...props: any) => Promise<HTMLElement>;
+    createMentionButton: (...props: any) => Promise<HTMLElement>;
+    createTweet: (...props: any) => Promise<HTMLElement>;
+    createTimeline: (...props: any) => Promise<HTMLElement>;
+  }
+};
+
 declare global {
   interface Window {
     twttr: {
-      widgets: {
-        /* eslint-disable @typescript-eslint/no-explicit-any */
-        // TODO: actually type these
-        createShareButton: (...props: any) => void;
-        createFollowButton: (...props: any) => void;
-        createHashtagButton: (...props: any) => void;
-        createMentionButton: (...props: any) => void;
-        createTweet: (...props: any) => void;
-        createTimeline: (...props: any) => void;
-      }
+      ready: (callbackfn: (twttr: Twttr) => void) => void
     }
   }
 }
