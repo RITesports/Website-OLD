@@ -127,7 +127,7 @@ const Home: React.FC = () => {
           </Carousel>
         </Grid>
         <Grid item xs={12}>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLSf_-nAyiReqDEjXy--c6Yk8l61IIEgOOUj79WfwBOdHYShsvQ/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
+          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScVyIRhmSr-AXO3nvXIWj-rWs64sLhDYUfgqtAiPxkhAeLXlw/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
             <Alert severity="info" icon={<TigerLogoColorIcon />} classes={{ icon: classes.alertIcon }} className={classes.alert}>
               <AlertTitle>Interested in joining RIT Esports?</AlertTitle>
               Click here to fill out our general interest form!
