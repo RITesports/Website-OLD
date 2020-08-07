@@ -56,8 +56,6 @@ const TwitterTimeline: React.FC<Props> = ({
 
   useEffect(() => {
     if (twitterTimeline.current) {
-      // @ts-ignore window.twttr is included in the <head>
-      // eslint-disable-next-line @typescript-eslint/no-unsafe-call
       window.twttr.widgets.createTimeline(
         rest,
         twitterTimeline.current,
