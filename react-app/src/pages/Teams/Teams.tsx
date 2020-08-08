@@ -38,7 +38,7 @@ const Teams: React.FC = () => {
           {teamError
             ? <Alert severity="error">{teamError}</Alert>
             : (
-              <Container disableGutters>
+              <Container disableGutters maxWidth="xl">
                 <Grid container direction="column" alignItems="center" spacing={3}>
                   <Grid item>
                     <TeamDetails team={team} />
