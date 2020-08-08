@@ -10,8 +10,8 @@ import Menu from '@material-ui/core/Menu';
 import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
-import MenuIcon from 'mdi-material-ui/Menu';
 import AccountCircleIcon from 'mdi-material-ui/AccountCircle';
+import MenuIcon from 'mdi-material-ui/Menu';
 
 import MenuDrawer from './MenuDrawer';
 import { Wordmark_Long_White } from '../../assets';
