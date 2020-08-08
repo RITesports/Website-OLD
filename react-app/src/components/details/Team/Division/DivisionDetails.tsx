@@ -8,28 +8,30 @@ import Division from '../../../../models/team/division';
 import PlayerCard from '../../../cards/Player';
 
 type Props = {
-  division: Division
+  division: Division;
 };
 const DivisionDetails: React.FC<Props> = ({ division }) => (
-  <Grid container direction="column" alignItems="center" spacing={5}>
+  <Grid container direction="column" alignItems="center" spacing={3}>
     {division.name && (
       <Grid item>
-        <Typography variant="h4">{division.name}</Typography>
+        <Typography variant="h4" align="center">{division.name}</Typography>
       </Grid>
     )}
-    <Grid item container justify="center" spacing={5}>
-      {division.players?.map((player) => (
-        <Grid key={player._id} item>
-          {player.profileId
-            ? (
-              <Link component={RouterLink} to={`/profiles/${player.profileId}`}>
-                <PlayerCard player={player} />
-              </Link>
-            )
-            : <PlayerCard player={player} />}
-        </Grid>
-      ))}
-    </Grid>
+    {!!division.players?.length && (
+      <Grid item container justify="center" spacing={3}>
+        {division.players.map((player) => (
+          <Grid item key={player._id}>
+            {player.profileId
+              ? (
+                <Link component={RouterLink} to={`/profiles/${player.profileId}`}>
+                  <PlayerCard player={player} />
+                </Link>
+              )
+              : <PlayerCard player={player} />}
+          </Grid>
+        ))}
+      </Grid>
+    )}
   </Grid>
 );
 
