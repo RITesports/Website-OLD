@@ -11,6 +11,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Toolbar from '@material-ui/core/Toolbar';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 import MenuIcon from 'mdi-material-ui/Menu';
+import AccountCircleIcon from 'mdi-material-ui/AccountCircle';
 
 import MenuDrawer from './MenuDrawer';
 import { Wordmark_Long_White } from '../../assets';
@@ -60,7 +61,7 @@ const Header: React.FC = () => {
                 <Avatar alt={user.name} className={classes.avatar}>{user.name.split(' ').map((n) => n[0]).join('').toUpperCase()}</Avatar>
               </IconButton>
             )
-            : <Button variant="contained" color="primary" href="/auth/google">Log in</Button>}
+            : <Button variant="contained" color="primary" startIcon={<AccountCircleIcon />} href="/auth/google">Log in</Button>}
           {user && (
             <Menu anchorEl={anchorEl} open={!!anchorEl} onClose={closeMenu}>
               <MenuItem component={RouterLink} to={`/profiles/${user.profileId}`} onClick={closeMenu}>My Profile</MenuItem>
