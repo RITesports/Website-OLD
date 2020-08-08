@@ -13,7 +13,6 @@ const Founders = lazy(() => import('../pages/Founders'));
 const Profile = lazy(() => import('../pages/Profile'));
 const ProfileEdit = lazy(() => import('../pages/ProfileEdit'));
 
-const Team = lazy(() => import('../pages/Team'));
 const TeamEdit = lazy(() => import('../pages/TeamEdit'));
 const Teams = lazy(() => import('../pages/Teams'));
 
@@ -30,9 +29,8 @@ const Routes: React.FC = () => (
         <Route exact path="/profiles/:id"><Profile /></Route>
         <Route exact path="/profiles/:id/edit"><ProfileEdit /></Route>
 
-        <Route exact path="/teams"><Teams /></Route>
         <AdminRoute exact path="/teams/createTeam"><TeamEdit /></AdminRoute>
-        <Route exact path="/teams/:identifierOrId"><Team /></Route>
+        <Route exact path="/teams/:identifierOrId?"><Teams /></Route>
         <ManagerRoute exact path="/teams/:identifierOrId/edit"><TeamEdit /></ManagerRoute>
 
         <Route><NotFound /></Route>

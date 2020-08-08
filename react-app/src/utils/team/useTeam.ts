@@ -23,6 +23,8 @@ const useTeam = (identifierOrId?: string) => {
     if (identifierOrId) {
       axios.get<TeamRes>(`/api/teams/${identifierOrId}`)
         .then(({ data }) => {
+          setError(undefined);
+
           teamDispatch({ type: 'SET_TEAM', team: data.team });
 
           setCanDelete(data.canDelete);
