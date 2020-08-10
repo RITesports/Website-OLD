@@ -3,23 +3,17 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import { Member_No_Photo } from '../../../assets';
 import Player from '../../../models/team/division/player';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => createStyles({
   card: {
-    minHeight: '26rem',
-    width: '18rem',
+    minHeight: theme.spacing(52),
+    width: theme.spacing(36),
   },
-  cardTransition: {
-    transition: '.2s ease-in-out',
-    '&:hover': {
-      transform: 'scale(1.05)',
-    },
-  },
-});
+}));
 
 type Props = {
   player?: Player;
@@ -34,8 +28,8 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
   };
 
   return (
-    <Card raised className={`${classes.card} ${(player?.profileId && !children) ? classes.cardTransition : ''}`}>
-      <CardMedia component="img" src={player?.imageUrl || Member_No_Photo} onError={onError} />
+    <Card raised className={classes.card}>
+      <CardMedia component="img" src={player?.imageUrl || Member_No_Photo} alt={player?.imageUrl ? `${player.username}'s Photo` : 'No Member Photo'} onError={onError} />
       <CardContent>
         {children || (player && (
           <>

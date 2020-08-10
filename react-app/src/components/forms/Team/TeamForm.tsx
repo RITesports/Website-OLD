@@ -3,28 +3,27 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Grid from '@material-ui/core/Grid';
 import TextField from '@material-ui/core/TextField';
-import { makeStyles } from '@material-ui/core/styles';
+import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import ArrowDownBoldIcon from 'mdi-material-ui/ArrowDownBold';
 import ArrowUpBoldIcon from 'mdi-material-ui/ArrowUpBold';
 import DeleteIcon from 'mdi-material-ui/Delete';
 
 import DivisionForm from './Division';
-import TeamCard from '../../cards/Team';
 import Team from '../../../models/team';
 import { TeamActions } from '../../../utils/team';
 
-const useStyles = makeStyles({
-  teamInputs: {
-    paddingBottom: '0 !important',
-  },
+const useStyles = makeStyles((theme) => createStyles({
   teamInput: {
     display: 'block',
   },
-  card: {
-    textAlign: 'center',
+  divisionActions: {
+    marginTop: theme.spacing(1),
+
+    display: 'flex',
+    justifyContent: 'center',
   },
-});
+}));
 
 type Props = {
   team: Team,
@@ -34,8 +33,8 @@ const TeamForm: React.FC<Props> = ({ team, dispatch }) => {
   const classes = useStyles();
 
   return (
-    <Grid container direction="column" alignItems="center" spacing={5}>
-      <Grid item className={classes.teamInputs}>
+    <Grid container direction="column" alignItems="center" spacing={3}>
+      <Grid item>
         <TextField
           required
           label="Team Name"
@@ -60,23 +59,17 @@ const TeamForm: React.FC<Props> = ({ team, dispatch }) => {
         />
       </Grid>
       {team.divisions?.map((division, index, divisionArr) => (
-        <React.Fragment key={division._id}>
-          <Grid item>
-            <DivisionForm division={division} dispatch={dispatch} />
-          </Grid>
-          <Grid item>
-            <ButtonGroup size="large">
-              <Button variant="contained" color="secondary" onClick={() => dispatch({ type: 'TEAM_DIVISION_REMOVE', division })}><DeleteIcon /></Button>
-              <Button variant="contained" color="primary" disabled={index === 0} onClick={() => dispatch({ type: 'TEAM_DIVISION_UP', division })}><ArrowUpBoldIcon /></Button>
-              <Button variant="contained" color="primary" disabled={index === divisionArr.length - 1} onClick={() => dispatch({ type: 'TEAM_DIVISION_DOWN', division })}><ArrowDownBoldIcon /></Button>
-            </ButtonGroup>
-          </Grid>
-        </React.Fragment>
+        <Grid item key={division._id}>
+          <DivisionForm division={division} dispatch={dispatch} />
+          <ButtonGroup size="large" className={classes.divisionActions}>
+            <Button variant="contained" color="secondary" onClick={() => dispatch({ type: 'TEAM_DIVISION_REMOVE', division })}><DeleteIcon /></Button>
+            <Button variant="contained" color="primary" disabled={index === 0} onClick={() => dispatch({ type: 'TEAM_DIVISION_UP', division })}><ArrowUpBoldIcon /></Button>
+            <Button variant="contained" color="primary" disabled={index === divisionArr.length - 1} onClick={() => dispatch({ type: 'TEAM_DIVISION_DOWN', division })}><ArrowDownBoldIcon /></Button>
+          </ButtonGroup>
+        </Grid>
       ))}
-      <Grid item className={classes.card}>
-        <TeamCard>
-          <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'TEAM_DIVISION_ADD' })}>Add Division</Button>
-        </TeamCard>
+      <Grid item>
+        <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'TEAM_DIVISION_ADD' })}>Add Division</Button>
       </Grid>
     </Grid>
   );

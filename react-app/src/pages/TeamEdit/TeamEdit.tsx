@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
@@ -11,13 +12,13 @@ import TeamForm from '../../components/forms/Team';
 import { useTeam } from '../../utils/team';
 
 const useStyles = makeStyles((theme) => createStyles({
-  top: {
-    marginTop: theme.spacing(3),
+  form: {
+    marginTop: theme.spacing(4),
   },
 }));
 
 type Params = {
-  identifierOrId: string | undefined
+  identifierOrId?: string;
 };
 const TeamEdit: React.FC = () => {
   const classes = useStyles();
@@ -66,21 +67,23 @@ const TeamEdit: React.FC = () => {
   return (
     <>
       {error && <Alert severity="error">{error}</Alert>}
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <Grid container direction="column" alignItems="center" spacing={5}>
-          <Grid item className={classes.top}>
-            <Button type="submit" size="large" variant="contained" color="primary">Save Team</Button>
-          </Grid>
-          <Grid item>
-            <TeamForm team={team} dispatch={teamDispatch} />
-          </Grid>
-          {!newTeam && canDelete && (
+      <Container disableGutters maxWidth="xl">
+        <form noValidate autoComplete="off" onSubmit={handleSubmit} className={classes.form}>
+          <Grid container direction="column" alignItems="center" spacing={3}>
             <Grid item>
-              <Button size="large" variant="contained" color="secondary" onClick={handleDelete}>{confirmDelete ? 'Confirm Delete' : 'Delete Team'}</Button>
+              <Button type="submit" variant="contained" size="large" color="primary">Save Team</Button>
             </Grid>
-          )}
-        </Grid>
-      </form>
+            <Grid item>
+              <TeamForm team={team} dispatch={teamDispatch} />
+            </Grid>
+            {!newTeam && canDelete && (
+              <Grid item>
+                <Button variant="contained" size="large" color="secondary" onClick={handleDelete}>{confirmDelete ? 'Confirm Delete' : 'Delete Team'}</Button>
+              </Grid>
+            )}
+          </Grid>
+        </form>
+      </Container>
     </>
   );
 };
