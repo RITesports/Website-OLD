@@ -52,7 +52,7 @@ const DivisionForm: React.FC<Props> = ({ division, dispatch }) => {
         ))}
         <Grid item className={classes.card}>
           <PlayerCard>
-            <Button size="large" variant="outlined" color="primary" onClick={() => dispatch({ type: 'DIVISION_PLAYER_ADD', division })}>Add Player</Button>
+            <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'DIVISION_PLAYER_ADD', division })}>Add Player</Button>
           </PlayerCard>
         </Grid>
       </Grid>
