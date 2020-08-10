@@ -89,7 +89,7 @@ const useStyles = makeStyles((theme) => createStyles({
     objectFit: 'contain',
   },
 
-  matchContainer: {
+  matchesContainer: {
     height: '100%',
   },
 
@@ -183,7 +183,7 @@ const Home: React.FC = () => {
         </Grid>
         <Grid item xs={12} sm={7}>
           <Brick title="UPCOMING MATCHES" className={classes.brick}>
-            <Grid container alignItems="center" justify="center" style={{ height: '100%' }}>
+            <Grid container alignItems="center" justify="center" className={classes.matchesContainer}>
               <Typography variant="h3" align="center">Coming soon!</Typography>
             </Grid>
           </Brick>
