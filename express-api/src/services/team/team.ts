@@ -41,7 +41,8 @@ export const updateTeam = async (team: Team) => {
   let updatedTeam: TeamDocument | null;
 
   try {
-    updatedTeam = await Team.findByIdAndUpdate(team._id, team, { new: true });
+    // @ts-ignore: Overwrite is a property but typings aren't updated for mongoose
+    updatedTeam = await Team.findByIdAndUpdate(team._id, team, { new: true, overwrite: true });
   }
   catch (e) {
     console.error(e);
