@@ -11,13 +11,13 @@ import TeamForm from '../../components/forms/Team';
 import { useTeam } from '../../utils/team';
 
 const useStyles = makeStyles((theme) => createStyles({
-  top: {
+  form: {
     marginTop: theme.spacing(3),
   },
 }));
 
 type Params = {
-  identifierOrId: string | undefined
+  identifierOrId?: string;
 };
 const TeamEdit: React.FC = () => {
   const classes = useStyles();
@@ -66,9 +66,9 @@ const TeamEdit: React.FC = () => {
   return (
     <>
       {error && <Alert severity="error">{error}</Alert>}
-      <form noValidate autoComplete="off" onSubmit={handleSubmit}>
-        <Grid container direction="column" alignItems="center" spacing={5}>
-          <Grid item className={classes.top}>
+      <form noValidate autoComplete="off" onSubmit={handleSubmit} className={classes.form}>
+        <Grid container direction="column" alignItems="center" spacing={3}>
+          <Grid item>
             <Button type="submit" size="large" variant="contained" color="primary">Save Team</Button>
           </Grid>
           <Grid item>
