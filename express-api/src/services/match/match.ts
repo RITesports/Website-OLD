@@ -43,7 +43,8 @@ export const updateMatch = async (match: Match) => {
   let updatedMatch: MatchDocument | null;
 
   try {
-    updatedMatch = await Match.findByIdAndUpdate(match._id, { ...match, teamId: Types.ObjectId(match.teamId), startTime: match.startTime ? new Date(match.startTime) : undefined }, { new: true });
+    // @ts-ignore: Overwrite is a property but typings aren't updated for mongoose
+    updatedMatch = await Match.findByIdAndUpdate(match._id, { ...match, teamId: Types.ObjectId(match.teamId), startTime: match.startTime ? new Date(match.startTime) : undefined }, { new: true, overwrite: true });
   }
   catch (e) {
     console.error(e);
