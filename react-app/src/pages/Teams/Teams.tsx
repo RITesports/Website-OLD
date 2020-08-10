@@ -36,7 +36,7 @@ const Teams: React.FC = () => {
       ? <Alert severity="error">{teamsError}</Alert>
       : (
         <>
-          <Tabs value={team.identifier || false} centered scrollButtons="on" indicatorColor="primary">
+          <Tabs value={team.identifier || false} variant="scrollable" scrollButtons="on" indicatorColor="primary">
             {teams.map((tabTeam) => (
               <Tab value={tabTeam.identifier} icon={<FromLink src={tabTeam.imageUrl || Controller} alt={team.imageUrl ? `${team.name} Icon` : 'Controller Icon'} />} component={RouterLink} to={`/teams/${tabTeam.identifier}`} key={tabTeam._id} />
             ))}
