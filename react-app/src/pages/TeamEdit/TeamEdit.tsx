@@ -12,7 +12,7 @@ import { useTeam } from '../../utils/team';
 
 const useStyles = makeStyles((theme) => createStyles({
   form: {
-    marginTop: theme.spacing(3),
+    marginTop: theme.spacing(4),
   },
 }));
 
