@@ -7,6 +7,7 @@ export default class Member {
   role = '';
 
   profileId?: string;
+  profile: { _id: string, imageUrl?: string } | null = null;
 
   imageUrl?: string;
 }

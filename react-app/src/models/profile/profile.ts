@@ -7,6 +7,7 @@ export default class Profile {
 
   name?: string;
   bio?: string;
+  imageUrl?: string;
 
   facebookUrl?: string;
   twitterUrl?: string;
