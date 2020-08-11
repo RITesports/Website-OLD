@@ -1,6 +1,6 @@
 import ObjectID from 'bson-objectid';
 
-export default class Player {
+export default class Member {
   _id = new ObjectID().toHexString();
 
   username = '';

@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
 import { createStyles, makeStyles } from '@material-ui/core/styles';
 
 import { Member_No_Photo } from '../../../assets';
-import Player from '../../../models/team/division/player';
+import Member from '../../../models/team/division/member';
 
 const useStyles = makeStyles((theme) => createStyles({
   card: {
@@ -16,9 +16,9 @@ const useStyles = makeStyles((theme) => createStyles({
 }));
 
 type Props = {
-  player?: Player;
+  member?: Member;
 };
-const PlayerCard: React.FC<Props> = ({ player, children }) => {
+const MemberCard: React.FC<Props> = ({ member, children }) => {
   const classes = useStyles();
 
   const onError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
@@ -29,12 +29,12 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
 
   return (
     <Card raised className={classes.card}>
-      <CardMedia component="img" src={player?.imageUrl || Member_No_Photo} alt={player?.imageUrl ? `${player.username}'s Photo` : 'No Member Photo'} onError={onError} />
+      <CardMedia component="img" src={member?.imageUrl || Member_No_Photo} alt={member?.imageUrl ? `${member.username}'s Photo` : 'No Member Photo'} onError={onError} />
       <CardContent>
-        {children || (player && (
+        {children || (member && (
           <>
-            <Typography variant="h5" align="center">{player.username}</Typography>
-            <Typography variant="h6" align="center">{player.role}</Typography>
+            <Typography variant="h5" align="center">{member.username}</Typography>
+            <Typography variant="h6" align="center">{member.role}</Typography>
           </>
         ))}
       </CardContent>
@@ -42,4 +42,4 @@ const PlayerCard: React.FC<Props> = ({ player, children }) => {
   );
 };
 
-export default PlayerCard;
+export default MemberCard;

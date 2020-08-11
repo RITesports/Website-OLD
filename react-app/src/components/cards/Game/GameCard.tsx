@@ -20,7 +20,7 @@ const useStyles = makeStyles({
 type Props = {
   game: Game;
 };
-const PlayerCard: React.FC<Props> = ({ game }) => {
+const GameCard: React.FC<Props> = ({ game }) => {
   const classes = useStyles();
 
   const theme = useTheme();
@@ -45,4 +45,4 @@ const PlayerCard: React.FC<Props> = ({ game }) => {
   );
 };
 
-export default PlayerCard;
+export default GameCard;

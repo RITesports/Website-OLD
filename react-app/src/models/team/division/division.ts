@@ -1,13 +1,13 @@
 import ObjectID from 'bson-objectid';
 
 import League from './league';
-import Player from './player';
+import Member from './member';
 
 export default class Division {
   _id = new ObjectID().toHexString();
 
   name?: string;
 
-  players?: Player[];
+  members?: Member[];
   leagues?: League[];
 }

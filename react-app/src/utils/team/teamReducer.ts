@@ -1,25 +1,25 @@
 import { Reducer } from 'react';
 
 import {
-  TeamActions, DivisionActions, LeagueActions, PlayerActions,
+  TeamActions, DivisionActions, LeagueActions, MemberActions,
 } from './actions';
 import Team from '../../models/team';
 import Division from '../../models/team/division';
 import League from '../../models/team/division/league';
-import Player from '../../models/team/division/player';
+import Member from '../../models/team/division/member';
 
-const playerReducer: Reducer<Player, PlayerActions> = (prevPlayer, action) => {
+const memberReducer: Reducer<Member, MemberActions> = (prevMember, action) => {
   switch (action.type) {
-    case 'PLAYER_SET_USERNAME':
-      return { ...prevPlayer, username: action.username };
-    case 'PLAYER_SET_ROLE':
-      return { ...prevPlayer, role: action.role };
-    case 'PLAYER_SET_PROFILE_ID':
-      return { ...prevPlayer, profileId: action.profileId || undefined };
-    case 'PLAYER_SET_IMAGE_URL':
-      return { ...prevPlayer, imageUrl: action.imageUrl || undefined };
+    case 'MEMBER_SET_USERNAME':
+      return { ...prevMember, username: action.username };
+    case 'MEMBER_SET_ROLE':
+      return { ...prevMember, role: action.role };
+    case 'MEMBER_SET_PROFILE_ID':
+      return { ...prevMember, profileId: action.profileId || undefined };
+    case 'MEMBER_SET_IMAGE_URL':
+      return { ...prevMember, imageUrl: action.imageUrl || undefined };
     default:
-      return prevPlayer;
+      return prevMember;
   }
 };
 
@@ -73,33 +73,33 @@ const divisionReducer: Reducer<Division, DivisionActions> = (prevDivision, actio
       }
       return prevDivision;
 
-    case 'DIVISION_PLAYER_ADD':
-      return { ...prevDivision, players: prevDivision.players ? [...prevDivision.players, new Player()] : [new Player()] };
-    case 'DIVISION_PLAYER_REMOVE':
-      return { ...prevDivision, players: prevDivision.players?.filter((player) => player !== action.player) };
-    case 'DIVISION_PLAYER_UP':
-      if (prevDivision.players) {
-        const index = prevDivision.players.indexOf(action.player);
+    case 'DIVISION_MEMBER_ADD':
+      return { ...prevDivision, members: prevDivision.members ? [...prevDivision.members, new Member()] : [new Member()] };
+    case 'DIVISION_MEMBER_REMOVE':
+      return { ...prevDivision, members: prevDivision.members?.filter((member) => member !== action.member) };
+    case 'DIVISION_MEMBER_UP':
+      if (prevDivision.members) {
+        const index = prevDivision.members.indexOf(action.member);
 
         if (index !== 0 && index !== -1) {
-          const playersCopy = [...prevDivision.players];
+          const membersCopy = [...prevDivision.members];
 
-          [playersCopy[index - 1], playersCopy[index]] = [playersCopy[index], playersCopy[index - 1]];
+          [membersCopy[index - 1], membersCopy[index]] = [membersCopy[index], membersCopy[index - 1]];
 
-          return { ...prevDivision, players: playersCopy };
+          return { ...prevDivision, members: membersCopy };
         }
       }
       return prevDivision;
-    case 'DIVISION_PLAYER_DOWN':
-      if (prevDivision.players) {
-        const index = prevDivision.players.indexOf(action.player);
+    case 'DIVISION_MEMBER_DOWN':
+      if (prevDivision.members) {
+        const index = prevDivision.members.indexOf(action.member);
 
-        if (index !== prevDivision.players.length - 1 && index !== -1) {
-          const playersCopy = [...prevDivision.players];
+        if (index !== prevDivision.members.length - 1 && index !== -1) {
+          const membersCopy = [...prevDivision.members];
 
-          [playersCopy[index], playersCopy[index + 1]] = [playersCopy[index + 1], playersCopy[index]];
+          [membersCopy[index], membersCopy[index + 1]] = [membersCopy[index + 1], membersCopy[index]];
 
-          return { ...prevDivision, players: playersCopy };
+          return { ...prevDivision, members: membersCopy };
         }
       }
       return prevDivision;
@@ -109,11 +109,11 @@ const divisionReducer: Reducer<Division, DivisionActions> = (prevDivision, actio
     case 'LEAGUE_SET_IMAGE_URL':
       return { ...prevDivision, leagues: prevDivision.leagues?.map((league) => (league === action.league ? leagueReducer(league, action) : league)) };
 
-    case 'PLAYER_SET_USERNAME':
-    case 'PLAYER_SET_ROLE':
-    case 'PLAYER_SET_PROFILE_ID':
-    case 'PLAYER_SET_IMAGE_URL':
-      return { ...prevDivision, players: prevDivision.players?.map((player) => (player === action.player ? playerReducer(player, action) : player)) };
+    case 'MEMBER_SET_USERNAME':
+    case 'MEMBER_SET_ROLE':
+    case 'MEMBER_SET_PROFILE_ID':
+    case 'MEMBER_SET_IMAGE_URL':
+      return { ...prevDivision, members: prevDivision.members?.map((member) => (member === action.member ? memberReducer(member, action) : member)) };
 
     default:
       return prevDivision;
@@ -162,10 +162,10 @@ const teamReducer: Reducer<Team, TeamActions> = (prevTeam, action) => {
       return prevTeam;
 
     case 'DIVISION_SET_NAME':
-    case 'DIVISION_PLAYER_ADD':
-    case 'DIVISION_PLAYER_REMOVE':
-    case 'DIVISION_PLAYER_UP':
-    case 'DIVISION_PLAYER_DOWN':
+    case 'DIVISION_MEMBER_ADD':
+    case 'DIVISION_MEMBER_REMOVE':
+    case 'DIVISION_MEMBER_UP':
+    case 'DIVISION_MEMBER_DOWN':
     case 'DIVISION_LEAGUE_ADD':
     case 'DIVISION_LEAGUE_REMOVE':
     case 'DIVISION_LEAGUE_UP':
@@ -175,10 +175,10 @@ const teamReducer: Reducer<Team, TeamActions> = (prevTeam, action) => {
     case 'LEAGUE_SET_URL':
     case 'LEAGUE_SET_IMAGE_URL':
     // fallthrough
-    case 'PLAYER_SET_USERNAME':
-    case 'PLAYER_SET_ROLE':
-    case 'PLAYER_SET_PROFILE_ID':
-    case 'PLAYER_SET_IMAGE_URL':
+    case 'MEMBER_SET_USERNAME':
+    case 'MEMBER_SET_ROLE':
+    case 'MEMBER_SET_PROFILE_ID':
+    case 'MEMBER_SET_IMAGE_URL':
       return { ...prevTeam, divisions: prevTeam.divisions?.map((division) => (division === action.division ? divisionReducer(division, action) : division)) };
 
     default:

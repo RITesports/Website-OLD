@@ -5,7 +5,7 @@ import Link from '@material-ui/core/Link';
 import Typography from '@material-ui/core/Typography';
 
 import Division from '../../../../models/team/division';
-import PlayerCard from '../../../cards/Player';
+import MemberCard from '../../../cards/Member';
 
 type Props = {
   division: Division;
@@ -17,17 +17,17 @@ const DivisionDetails: React.FC<Props> = ({ division }) => (
         <Typography variant="h4" align="center">{division.name}</Typography>
       </Grid>
     )}
-    {!!division.players?.length && (
+    {!!division.members?.length && (
       <Grid item container justify="center" spacing={3}>
-        {division.players.map((player) => (
-          <Grid item key={player._id}>
-            {player.profileId
+        {division.members.map((member) => (
+          <Grid item key={member._id}>
+            {member.profileId
               ? (
-                <Link component={RouterLink} to={`/profiles/${player.profileId}`}>
-                  <PlayerCard player={player} />
+                <Link component={RouterLink} to={`/profiles/${member.profileId}`}>
+                  <MemberCard member={member} />
                 </Link>
               )
-              : <PlayerCard player={player} />}
+              : <MemberCard member={member} />}
           </Grid>
         ))}
       </Grid>
