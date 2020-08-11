@@ -1,6 +1,8 @@
 import React from 'react';
+import copy from 'copy-to-clipboard';
 import { Link as RouterLink, useParams } from 'react-router-dom';
 import Button from '@material-ui/core/Button';
+import ButtonGroup from '@material-ui/core/ButtonGroup';
 import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
@@ -13,6 +15,8 @@ import { createStyles, makeStyles } from '@material-ui/core/styles';
 import DiscordIcon from 'mdi-material-ui/Discord';
 import FacebookIcon from 'mdi-material-ui/Facebook';
 import InstagramIcon from 'mdi-material-ui/Instagram';
+import LinkIcon from 'mdi-material-ui/Link';
+import PencilOutlineIcon from 'mdi-material-ui/PencilOutline';
 import TelevisionIcon from 'mdi-material-ui/Television';
 import TwitterIcon from 'mdi-material-ui/Twitter';
 import YouTubeIcon from 'mdi-material-ui/Youtube';
@@ -23,6 +27,7 @@ import { Banner_Profile } from '../../assets';
 import GameCard from '../../components/cards/Game';
 import ProfileCard from '../../components/cards/Profile';
 import useProfile from '../../utils/profile';
+import useUser from '../../utils/user';
 
 const useStyles = makeStyles((theme) => createStyles({
   top: {
@@ -46,6 +51,8 @@ type Params = {
 const Profiles: React.FC = () => {
   const classes = useStyles();
 
+  const user = useUser();
+
   const { id } = useParams<Params>();
   const { profile, error, canEdit } = useProfile(id);
 
@@ -57,8 +64,15 @@ const Profiles: React.FC = () => {
           <>
             <Grid container alignItems="center" className={classes.banner}>
               <Grid item className={classes.title}>
-                <Typography variant="h3">User Profile</Typography>
-                {canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary">Edit</Button>}
+                <Typography variant="h3">Member Profile</Typography>
+                {user?.profileId === profile._id
+                  ? (
+                    <ButtonGroup variant="contained" color="primary">
+                      <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} startIcon={<PencilOutlineIcon />}>Edit</Button>
+                      <Button onClick={() => copy(profile._id)} endIcon={<LinkIcon />}>Copy Profile ID</Button>
+                    </ButtonGroup>
+                    )
+                  : canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary" startIcon={<PencilOutlineIcon />}>Edit</Button>}
               </Grid>
             </Grid>
             <Container>
