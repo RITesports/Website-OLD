@@ -14,7 +14,7 @@ export const createTeam = async (team: Team) => {
 /* Read */
 export const findTeams = async () => {
   try {
-    return await Team.find().sort('name');
+    return await Team.find().sort('name').populate('divisions.members.profile', 'imageUrl');
   }
   catch (e) {
     console.error(e);
@@ -25,7 +25,7 @@ export const findTeamByIdentifierOrId = async (identifierOrId: string) => {
   let team: TeamDocument | null;
 
   try {
-    team = await Team.findOne({ identifier: identifierOrId }) || await Team.findById(identifierOrId);
+    team = await Team.findOne({ identifier: identifierOrId }).populate('divisions.members.profile', 'imageUrl') || await Team.findById(identifierOrId).populate('divisions.members.profile', 'imageUrl');
   }
   catch (e) {
     console.error(e);
