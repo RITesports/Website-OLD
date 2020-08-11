@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useHistory, useParams } from 'react-router-dom';
 import axios from 'axios';
-import copy from 'clipboard-copy';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -59,7 +58,6 @@ const ProfileEdit: React.FC = () => {
       <Grid container alignItems="center" className={classes.banner}>
         <Grid item className={classes.title}>
           <Typography variant="h3">User Profile</Typography>
-          <Button variant="contained" color="primary" onClick={() => copy(profile._id)}>Copy Profile ID</Button>
         </Grid>
       </Grid>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
