@@ -65,15 +65,14 @@ const Profiles: React.FC = () => {
             <Grid container alignItems="center" className={classes.banner}>
               <Grid item className={classes.title}>
                 <Typography variant="h3">Member Profile</Typography>
-                {user?.profileId === profile._id 
+                {user?.profileId === profile._id
                   ? (
                     <ButtonGroup variant="contained" color="primary">
                       <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} startIcon={<PencilOutlineIcon />}>Edit</Button>
                       <Button onClick={() => copy(profile._id)} endIcon={<LinkIcon />}>Copy Profile ID</Button>
                     </ButtonGroup>
                     )
-                  : canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary" startIcon={<PencilOutlineIcon />}>Edit</Button>
-                }
+                  : canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary" startIcon={<PencilOutlineIcon />}>Edit</Button>}
               </Grid>
             </Grid>
             <Container>
