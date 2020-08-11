@@ -184,7 +184,7 @@ const Home: React.FC = () => {
         <Grid item xs={12} sm={7}>
           <Brick title="UPCOMING MATCHES" className={classes.brick}>
             <Grid container alignItems="center" justify="center" className={classes.matchesContainer}>
-              <Typography variant="h3" align="center">Coming soon!</Typography>
+              <Typography variant="h3" align="center">Coming Soon!™</Typography>
             </Grid>
           </Brick>
         </Grid>

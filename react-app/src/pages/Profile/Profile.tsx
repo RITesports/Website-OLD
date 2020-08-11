@@ -71,7 +71,7 @@ const Profiles: React.FC = () => {
                       <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} startIcon={<PencilOutlineIcon />}>Edit</Button>
                       <Button onClick={() => copy(profile._id)} endIcon={<LinkIcon />}>Copy Profile ID</Button>
                     </ButtonGroup>
-                    )
+                  )
                   : canEdit && <Button component={RouterLink} to={`/profiles/${profile._id}/edit`} variant="contained" color="primary" startIcon={<PencilOutlineIcon />}>Edit</Button>}
               </Grid>
             </Grid>
