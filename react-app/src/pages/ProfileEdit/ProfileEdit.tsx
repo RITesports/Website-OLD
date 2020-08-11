@@ -59,7 +59,7 @@ const ProfileEdit: React.FC = () => {
       <Grid container alignItems="center" className={classes.banner}>
         <Grid item className={classes.title}>
           <Typography variant="h3">User Profile</Typography>
-          <Button variant="contained" color="primary" onClick={()=>copy(profile._id)}>Copy Profile ID</Button>
+          <Button variant="contained" color="primary" onClick={() => copy(profile._id)}>Copy Profile ID</Button>
         </Grid>
       </Grid>
       <form noValidate autoComplete="off" onSubmit={handleSubmit}>
