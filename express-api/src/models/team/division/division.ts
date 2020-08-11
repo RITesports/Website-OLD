@@ -2,21 +2,21 @@ import Joi from '@hapi/joi';
 import { Schema } from 'mongoose';
 
 import { League, LeagueJoi } from './league';
-import { Player, PlayerJoi } from './player';
+import { Member, MemberJoi } from './member';
 
 export interface Division {
   _id?: string;
 
   name?: string;
 
-  players?: Player[];
+  members?: Member[];
   leagues?: League[];
 }
 
 export const Division = new Schema<Division>({
   name: String,
 
-  players: [Player],
+  members: [Member],
   leagues: [League],
 });
 
@@ -25,6 +25,6 @@ export const DivisionJoi = Joi.object().keys({
 
   name: Joi.string(),
 
-  players: Joi.array().items(PlayerJoi),
+  members: Joi.array().items(MemberJoi),
   leagues: Joi.array().items(LeagueJoi),
 });
