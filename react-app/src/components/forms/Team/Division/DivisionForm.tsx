@@ -8,8 +8,8 @@ import ArrowLeftBoldIcon from 'mdi-material-ui/ArrowLeftBold';
 import ArrowRightBoldIcon from 'mdi-material-ui/ArrowRightBold';
 import DeleteIcon from 'mdi-material-ui/Delete';
 
-import PlayerForm from './Player';
-import PlayerCard from '../../../cards/Player';
+import MemberForm from './Member';
+import MemberCard from '../../../cards/Member';
 import Division from '../../../../models/team/division';
 import { DivisionActions } from '../../../../utils/team';
 
@@ -38,22 +38,22 @@ const DivisionForm: React.FC<Props> = ({ division, dispatch }) => {
         />
       </Grid>
       <Grid item container justify="center" alignItems="center" spacing={3}>
-        {division.players?.map((player, index, playerArr) => (
-          <Grid item key={player._id}>
-            <PlayerCard player={player}>
-              <PlayerForm division={division} player={player} dispatch={dispatch} />
+        {division.members?.map((member, index, memberArr) => (
+          <Grid item key={member._id}>
+            <MemberCard member={member}>
+              <MemberForm division={division} member={member} dispatch={dispatch} />
               <ButtonGroup fullWidth>
-                <Button color="secondary" onClick={() => dispatch({ type: 'DIVISION_PLAYER_REMOVE', division, player })}><DeleteIcon /></Button>
-                <Button color="primary" disabled={index === 0} onClick={() => dispatch({ type: 'DIVISION_PLAYER_UP', division, player })}><ArrowLeftBoldIcon /></Button>
-                <Button color="primary" disabled={index === playerArr.length - 1} onClick={() => dispatch({ type: 'DIVISION_PLAYER_DOWN', division, player })}><ArrowRightBoldIcon /></Button>
+                <Button color="secondary" onClick={() => dispatch({ type: 'DIVISION_MEMBER_REMOVE', division, member })}><DeleteIcon /></Button>
+                <Button color="primary" disabled={index === 0} onClick={() => dispatch({ type: 'DIVISION_MEMBER_UP', division, member })}><ArrowLeftBoldIcon /></Button>
+                <Button color="primary" disabled={index === memberArr.length - 1} onClick={() => dispatch({ type: 'DIVISION_MEMBER_DOWN', division, member })}><ArrowRightBoldIcon /></Button>
               </ButtonGroup>
-            </PlayerCard>
+            </MemberCard>
           </Grid>
         ))}
         <Grid item className={classes.card}>
-          <PlayerCard>
-            <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'DIVISION_PLAYER_ADD', division })}>Add Player</Button>
-          </PlayerCard>
+          <MemberCard>
+            <Button variant="outlined" size="large" color="primary" onClick={() => dispatch({ type: 'DIVISION_MEMBER_ADD', division })}>Add Member</Button>
+          </MemberCard>
         </Grid>
       </Grid>
     </Grid>

@@ -1,7 +1,7 @@
 import Joi from '@hapi/joi';
 import { Schema } from 'mongoose';
 
-export interface Player {
+export interface Member {
   _id?: string;
 
   username: string;
@@ -11,7 +11,7 @@ export interface Player {
   imageUrl?: string;
 }
 
-export const Player = new Schema<Player>({
+export const Member = new Schema<Member>({
   username: { type: String, required: true },
   role: { type: String, required: true },
   profileId: { type: Schema.Types.ObjectId, ref: 'Profile' },
@@ -19,7 +19,7 @@ export const Player = new Schema<Player>({
   imageUrl: String,
 });
 
-export const PlayerJoi = Joi.object().keys({
+export const MemberJoi = Joi.object().keys({
   _id: Joi.string().regex(/^[a-f\d]{24}$/i),
 
   username: Joi.string().required(),

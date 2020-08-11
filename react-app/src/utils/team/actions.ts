@@ -1,7 +1,7 @@
 import Team from '../../models/team';
 import Division from '../../models/team/division';
 import League from '../../models/team/division/league';
-import Player from '../../models/team/division/player';
+import Member from '../../models/team/division/member';
 
 export type TeamActions =
   | { type: 'SET_TEAM', team: Team }
@@ -24,21 +24,21 @@ export type DivisionActions =
   | { type: 'DIVISION_LEAGUE_UP', division: Division, league: League }
   | { type: 'DIVISION_LEAGUE_DOWN', division: Division, league: League }
 
-  | { type: 'DIVISION_PLAYER_ADD', division: Division }
-  | { type: 'DIVISION_PLAYER_REMOVE', division: Division, player: Player }
-  | { type: 'DIVISION_PLAYER_UP', division: Division, player: Player }
-  | { type: 'DIVISION_PLAYER_DOWN', division: Division, player: Player }
+  | { type: 'DIVISION_MEMBER_ADD', division: Division }
+  | { type: 'DIVISION_MEMBER_REMOVE', division: Division, member: Member }
+  | { type: 'DIVISION_MEMBER_UP', division: Division, member: Member }
+  | { type: 'DIVISION_MEMBER_DOWN', division: Division, member: Member }
 
   | LeagueActions
-  | PlayerActions;
+  | MemberActions;
 
 export type LeagueActions =
   | { type: 'LEAGUE_SET_NAME', division: Division, league: League, name: string }
   | { type: 'LEAGUE_SET_URL', division: Division, league: League, url: string }
   | { type: 'LEAGUE_SET_IMAGE_URL', division: Division, league: League, imageUrl: string };
 
-export type PlayerActions =
-  | { type: 'PLAYER_SET_USERNAME', division: Division, player: Player, username: string }
-  | { type: 'PLAYER_SET_ROLE', division: Division, player: Player, role: string }
-  | { type: 'PLAYER_SET_PROFILE_ID', division: Division, player: Player, profileId: string }
-  | { type: 'PLAYER_SET_IMAGE_URL', division: Division, player: Player, imageUrl: string };
+export type MemberActions =
+  | { type: 'MEMBER_SET_USERNAME', division: Division, member: Member, username: string }
+  | { type: 'MEMBER_SET_ROLE', division: Division, member: Member, role: string }
+  | { type: 'MEMBER_SET_PROFILE_ID', division: Division, member: Member, profileId: string }
+  | { type: 'MEMBER_SET_IMAGE_URL', division: Division, member: Member, imageUrl: string };
