@@ -1,1 +1,1 @@
-export { default } from './TigerLogoColor';
+export { default } from './TigerLogoColorIcon';
