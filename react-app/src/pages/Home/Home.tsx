@@ -16,7 +16,7 @@ import {
 } from '../../assets';
 import Carousel from '../../components/Carousel';
 import TwitterTimeline from '../../components/twitter/Timeline';
-import TigerLogoColorIcon from '../../icons/TigerLogoColor';
+import { TigerLogoColorIcon } from '../../icons';
 
 const useStyles = makeStyles((theme) => createStyles({
   banner: {

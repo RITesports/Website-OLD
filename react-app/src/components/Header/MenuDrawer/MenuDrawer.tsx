@@ -19,7 +19,7 @@ import TwitterIcon from 'mdi-material-ui/Twitter';
 import YouTubeIcon from 'mdi-material-ui/Youtube';
 import WaveIcon from 'mdi-material-ui/Hail';
 
-import TigerLogoColorIcon from '../../../icons/TigerLogoColor';
+import { TigerLogoColorIcon } from '../../../icons';
 import useUser from '../../../utils/user';
 
 const routes = [
