@@ -64,7 +64,7 @@ const Profiles: React.FC = () => {
           <>
             <Grid container alignItems="center" className={classes.banner}>
               <Grid item className={classes.title}>
-                <Typography variant="h3">User Profile</Typography>
+                <Typography variant="h3">Member Profile</Typography>
                 {user?.profileId === profile._id 
                   ? (
                     <ButtonGroup variant="contained" color="primary">
