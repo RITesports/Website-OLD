@@ -51,7 +51,7 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
     <>
       <Grid container justify="center" alignItems="center" spacing={3}>
         <Grid item>
-          <ProfileCard>
+          <ProfileCard profile={profile}>
             <TextField
               label="Name"
               value={profile.name || ''}
@@ -70,6 +70,17 @@ const ProfileForm: React.FC<Props> = ({ profile, dispatch }) => {
               variant="outlined"
               margin="normal"
               onChange={(e) => dispatch({ type: 'PROFILE_SET_BIO', bio: e.target.value })}
+              fullWidth
+              className={classes.profileInput}
+            />
+            <TextField
+              label="Image URL"
+              value={profile.imageUrl || ''}
+              error={!!profile.imageUrl && !/https:\/\/hooli-drive\.sfo2\.digitaloceanspaces\.com\/website\/public\/members\/\S+/.exec(profile.imageUrl)}
+              helperText={!!profile.imageUrl && !/https:\/\/hooli-drive\.sfo2\.digitaloceanspaces\.com\/website\/public\/members\/\S+/.exec(profile.imageUrl) && "Image Must Be From RIT Esports's CDN"}
+              variant="outlined"
+              margin="normal"
+              onChange={(e) => dispatch({ type: 'PROFILE_SET_IMAGE_URL', imageUrl: e.target.value })}
               fullWidth
               className={classes.profileInput}
             />
