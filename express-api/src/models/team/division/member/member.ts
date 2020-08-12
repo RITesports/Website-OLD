@@ -3,7 +3,7 @@ import { Schema } from 'mongoose';
 
 import { ProfileJoi } from '../../../profile';
 
-export interface Member {
+interface Member {
   _id?: string;
 
   username: string;
