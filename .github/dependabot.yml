@@ -1,0 +1,25 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/react-app"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "17:00"
+      timezone: "America/New_York"
+    labels:
+      - "Dependencies"
+    reviewers:
+      - "RITesports/managers"
+
+  - package-ecosystem: "npm"
+    directory: "/express-api"
+    schedule:
+      interval: "weekly"
+      day: "friday"
+      time: "17:00"
+      timezone: "America/New_York"
+    labels:
+      - "Dependencies"
+    reviewers:
+      - "RITesports/managers"

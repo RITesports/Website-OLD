@@ -2,15 +2,85 @@
 <html lang="en">
 
 <head>
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-136489144-3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'UA-136489144-3');
+  </script>
+  <script>
+    window.twttr = (function (d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+      if (d.getElementById(id)) return t;
+      js = d.createElement(s);
+      js.id = id;
+      js.src = "https://platform.twitter.com/widgets.js";
+      fjs.parentNode.insertBefore(js, fjs);
+
+      t._e = [];
+      t.ready = function (f) {
+        t._e.push(f);
+      };
+
+      return t;
+    }(document, "script", "twitter-wjs"));
+  </script>
+
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-  <title>React App</title>
+
+  <meta property="og:title" content="RIT Esports">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.ritesports.org" />
+  <meta property="og:image"
+    content="https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wallpaper.png" />
+  <meta property="og:description" content="An RIT Student Club Run Like a Professional Team" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@RITesports" />
+  <meta name="twitter:title" content="RIT Esports" />
+  <meta name="twitter:description" content="An RIT Student Club Run Like a Professional Team" />
+  <meta name="twitter:image"
+    content="https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wallpaper.png" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="%PUBLIC_URL%/apple-touch-icon.png">
+  <link rel="shortcut icon" type="image/x-icon" href="%PUBLIC_URL%/favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="%PUBLIC_URL%/logo32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="%PUBLIC_URL%/logo16.png">
+
+  <link rel="manifest" href="%PUBLIC_URL%/RITEsports.webmanifest">
+
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link rel="stylesheet" type="text/css"
+    href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css" />
+
+  <title>RIT Esports</title>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
+  <script src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js" data-cfasync="false"></script>
+  <script>
+    window.cookieconsent.initialise({
+      "palette": {
+        "popup": {
+          "background": "#1e1e1e"
+        },
+        "button": {
+          "background": "transparent",
+          "text": "#f25822",
+          "border": "#f25822"
+        }
+      },
+      "position": "top"
+    });
+  </script>
 </body>
 
 </html>

@@ -6,7 +6,6 @@
   "extends": [
     "airbnb-base",
     "airbnb-typescript/base",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
@@ -26,10 +25,33 @@
   "rules": {
     "max-len": "off",
     "no-console": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "object-curly-newline": [
+      "error",
+      {
+        "multiline": true
+      }
+    ],
     "@typescript-eslint/brace-style": [
       "error",
       "stroustrup"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-unsafe-assignment": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off"
   }
 }

@@ -1,16 +1,25 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import './index.scss';
 
 import App from './App';
+import theme from './theme';
 import * as serviceWorker from './serviceWorker';
+import { UserProvider } from './utils/user';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <App />
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <UserProvider>
+          <App />
+        </UserProvider>
+      </ThemeProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root'),

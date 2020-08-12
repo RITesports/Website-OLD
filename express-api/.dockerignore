@@ -2,4 +2,7 @@
 
 *Dockerfile*
 
-node_modules 
+jwt_private.pem
+jwt_public.pem
+
+node_modules

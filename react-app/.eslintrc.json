@@ -8,7 +8,6 @@
     "airbnb-typescript",
     "airbnb/hooks",
     "plugin:react/recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking"
   ],
@@ -31,11 +30,46 @@
   ],
   "rules": {
     "max-len": "off",
+    "no-underscore-dangle": [
+      "error",
+      {
+        "allow": [
+          "_id"
+        ]
+      }
+    ],
+    "react/jsx-props-no-spreading": [
+      "error",
+      {
+        "exceptions": [
+          "Icon",
+          "IconFromLink",
+          "Route",
+          "SvgIcon"
+        ]
+      }
+    ],
     "react/prop-types": "off",
+    "yoda": [
+      "error",
+      "never",
+      {
+        "exceptRange": true
+      }
+    ],
     "@typescript-eslint/brace-style": [
       "error",
       "stroustrup"
     ],
-    "@typescript-eslint/explicit-function-return-type": "off"
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-ignore": "allow-with-description"
+      }
+    ],
+    "@typescript-eslint/explicit-function-return-type": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/lines-between-class-members": "off",
+    "@typescript-eslint/no-unsafe-member-access": "off"
   }
 }
