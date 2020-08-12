@@ -29,7 +29,7 @@ const MemberCard: React.FC<Props> = ({ member, children }) => {
 
   return (
     <Card raised className={classes.card}>
-      <CardMedia component="img" src={member?.imageUrl || Member_No_Photo} alt={member?.imageUrl ? `${member.username}'s Photo` : 'No Member Photo'} onError={onError} />
+      <CardMedia component="img" src={member?.imageUrl || member?.profile?.imageUrl || Member_No_Photo} alt={(member?.imageUrl && `${member.username}'s Photo`) || (member?.profile?.imageUrl && `${member.profile.name || member.profile._id}'s Photo`) || 'No Member Photo'} onError={onError} />
       <CardContent>
         {children || (member && (
           <>
