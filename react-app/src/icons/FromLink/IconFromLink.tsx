@@ -12,8 +12,8 @@ const useStyles = makeStyles({
 type Props = {
   src: string;
   alt: string;
-};
-const FromLink: React.FC<Props & IconProps> = ({ src, alt, ...props }) => {
+} & IconProps;
+const IconFromLink: React.FC<Props> = ({ src, alt, ...props }) => {
   const classes = useStyles();
 
   return (
@@ -23,4 +23,4 @@ const FromLink: React.FC<Props & IconProps> = ({ src, alt, ...props }) => {
   );
 };
 
-export default FromLink;
+export default IconFromLink;

@@ -1,2 +1,2 @@
-export { default as TigerLogoColor } from './TigerLogoColor';
-export { default as FromLink } from './FromLink';
+export { default } from './FromLink';
+export { default as TigerLogoColorIcon } from './TigerLogoColor';

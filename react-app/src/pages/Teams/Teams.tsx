@@ -11,7 +11,7 @@ import Alert from '@material-ui/lab/Alert';
 
 import { Controller } from '../../assets';
 import TeamDetails from '../../components/details/Team';
-import { FromLink } from '../../icons';
+import IconFromLink from '../../icons';
 import { useTeams, useTeam } from '../../utils/team';
 
 const useStyles = makeStyles((theme) => createStyles({
@@ -38,10 +38,10 @@ const Teams: React.FC = () => {
         <>
           <Tabs value={team.identifier || false} variant="scrollable" scrollButtons="on" indicatorColor="primary">
             {teams.map((tabTeam) => (
-              <Tab value={tabTeam.identifier} icon={<FromLink src={tabTeam.imageUrl || Controller} alt={team.imageUrl ? `${team.name} Icon` : 'Controller Icon'} />} component={RouterLink} to={`/teams/${tabTeam.identifier}`} key={tabTeam._id} />
+              <Tab value={tabTeam.identifier} icon={<IconFromLink src={tabTeam.imageUrl || Controller} alt={team.imageUrl ? `${team.name} Icon` : 'Controller Icon'} />} component={RouterLink} to={`/teams/${tabTeam.identifier}`} key={tabTeam._id} />
             ))}
             {canCreate && (
-              <Tab label="Create Team" icon={<FromLink src={Controller} alt="Controller Icon" />} component={RouterLink} to="/teams/createTeam" />
+              <Tab label="Create Team" icon={<IconFromLink src={Controller} alt="Controller Icon" />} component={RouterLink} to="/teams/createTeam" />
             )}
           </Tabs>
           {teamError

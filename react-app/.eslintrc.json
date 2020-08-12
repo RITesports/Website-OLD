@@ -43,6 +43,7 @@
       {
         "exceptions": [
           "Icon",
+          "IconFromLink",
           "Route",
           "SvgIcon"
         ]

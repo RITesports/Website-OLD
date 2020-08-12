@@ -1,6 +1,7 @@
 // Snake case for assets
 /* eslint-disable @typescript-eslint/naming-convention */
 
+// assets
 export const Banner_Home = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Home.png';
 export const Banner_Profile = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Profile.jpg';
 export const Banner_Welcome_Back = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Banner_Welcome_Back.png';
@@ -15,5 +16,9 @@ export const Wordmark_Long_White = 'https://hooli-drive.sfo2.digitaloceanspaces.
 export const Wordmark_Stacked_Gray = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Stacked_Gray.svg';
 export const Wordmark_Stacked_White = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/Wordmark_Stacked_White.svg';
 
+// icons
+export const TigerLogo_Color = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/assets/TigerLogo_Color.svg';
+
+// teams, members
 export const Controller = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/teams/Controller.svg';
 export const Member_No_Photo = 'https://hooli-drive.sfo2.digitaloceanspaces.com/website/public/members/Member_No_Photo.png';
