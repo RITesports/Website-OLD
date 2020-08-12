@@ -6,6 +6,7 @@ export type ProfileActions =
 
   | { type: 'PROFILE_SET_NAME', name: string }
   | { type: 'PROFILE_SET_BIO', bio: string }
+  | { type: 'PROFILE_SET_IMAGE_URL', imageUrl: string }
 
   | { type: 'PROFILE_SET_FACEBOOK_URL', facebookUrl: string }
   | { type: 'PROFILE_SET_TWITTER_URL', twitterUrl: string }

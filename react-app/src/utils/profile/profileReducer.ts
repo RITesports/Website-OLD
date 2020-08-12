@@ -30,6 +30,8 @@ const profileReducer: Reducer<Profile, ProfileActions> = (prevProfile, action) =
       return { ...prevProfile, name: (action.name.length > 32 ? prevProfile.name : action.name) || undefined };
     case 'PROFILE_SET_BIO':
       return { ...prevProfile, bio: (action.bio.length > 160 ? prevProfile.bio : action.bio) || undefined };
+    case 'PROFILE_SET_IMAGE_URL':
+      return { ...prevProfile, imageUrl: action.imageUrl || undefined };
 
     case 'PROFILE_SET_FACEBOOK_URL':
       return { ...prevProfile, facebookUrl: action.facebookUrl || undefined };

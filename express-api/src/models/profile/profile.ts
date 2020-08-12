@@ -8,6 +8,7 @@ export interface Profile {
 
   name?: string;
   bio?: string;
+  imageUrl?: string;
 
   facebookUrl?: string;
   twitterUrl?: string;
@@ -24,6 +25,7 @@ export type ProfileDocument = Profile & Document;
 export const Profile = model<ProfileDocument>('Profile', new Schema<Profile>({
   name: { type: String, maxlength: 32 },
   bio: { type: String, maxlength: 160 },
+  imageUrl: String,
 
   facebookUrl: String,
   twitterUrl: String,
@@ -40,6 +42,7 @@ export const ProfileJoi = Joi.object().keys({
 
   name: Joi.string().max(32),
   bio: Joi.string().max(160),
+  imageUrl: Joi.string().regex(/https:\/\/hooli-drive\.sfo2\.digitaloceanspaces\.com\/website\/public\/members\/\S+/),
 
   facebookUrl: Joi.string().uri(),
   twitterUrl: Joi.string().uri(),

@@ -36,7 +36,7 @@ const ProfileCard: React.FC<Props> = ({ profile, children }) => {
 
   return (
     <Card raised className={classes.card}>
-      <CardMedia component="img" src={Member_No_Photo} onError={onError} />
+      <CardMedia component="img" src={profile?.imageUrl || Member_No_Photo} alt={profile?.imageUrl ? `${profile.name || profile._id}'s Photo` : 'No Member Photo'} onError={onError} />
       <CardContent>
         {children || (profile && (
           <>
