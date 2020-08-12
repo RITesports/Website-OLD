@@ -42,7 +42,7 @@ export const ProfileJoi = Joi.object().keys({
 
   name: Joi.string().max(32),
   bio: Joi.string().max(160),
-  imageUrl: Joi.string().regex(/https:\/\/hooli-drive\.sfo2\.digitaloceanspaces\.com\/website\/public\/members\/.+/),
+  imageUrl: Joi.string().regex(/https:\/\/hooli-drive\.sfo2\.digitaloceanspaces\.com\/website\/public\/members\/\S+/),
 
   facebookUrl: Joi.string().uri(),
   twitterUrl: Joi.string().uri(),
