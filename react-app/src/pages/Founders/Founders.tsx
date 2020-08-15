@@ -165,7 +165,7 @@ const Founders: React.FC = () => {
   return (
     <Container maxWidth="xl">
       <Typography variant="h3" align="center" className={classes.title}>Founders</Typography>
-      <Typography variant="h5" align="center" className={classes.messages}>RIT Esports was founded by Evan Hirsh, Peter Lam, Andy Kukielka, Joseph Farrell, and Chad Weeden, along with the support of:</Typography>
+      <Typography variant="h5" align="center" className={classes.messages}>RIT Esports was founded by Evan Hirsh, Peter Lam, Andy Kukielka, Joseph Farrell, Chad Weeden, and Winnie Chen along with the support of:</Typography>
       <Grid container>
         {names.map((name) => (
           <Grid key={name} item xs={12} sm={4}>
