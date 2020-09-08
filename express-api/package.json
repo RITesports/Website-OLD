@@ -33,7 +33,7 @@
     "eslint-config-airbnb-base": "14.2.0",
     "eslint-config-airbnb-typescript": "9.0.0",
     "eslint-plugin-import": "2.22.0",
-    "ts-node-dev": "1.0.0-pre.59"
+    "ts-node-dev": "1.0.0-pre.62"
   },
   "scripts": {
     "build": "tsc && cross-env NODE_ENV=production node -r dotenv/config ./build",
