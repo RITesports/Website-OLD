@@ -43,16 +43,6 @@ const useStyles = makeStyles((theme) => createStyles({
     objectPosition: 'right',
   },
 
-  alert: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-
-    borderRadius: 0,
-  },
-  alertIcon: {
-    alignItems: 'center',
-  },
-
   brick: {
     height: theme.spacing(60),
 
