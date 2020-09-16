@@ -1,6 +1,7 @@
 import Joi from '@hapi/joi';
 import { Document, model, Schema } from 'mongoose';
 
+import { Award, AwardJoi } from './award';
 import { Game, GameJoi } from './game';
 
 export interface Profile {
@@ -18,6 +19,7 @@ export interface Profile {
   discordUsername?: string;
 
   games?: Game[];
+  awards?: Award[];
 }
 
 export type ProfileDocument = Profile & Document;
@@ -35,6 +37,7 @@ export const Profile = model<ProfileDocument>('Profile', new Schema<Profile>({
   discordUsername: String,
 
   games: [Game],
+  awards: [{ type: Award, immutable: true }],
 }));
 
 export const ProfileJoi = Joi.object().keys({
@@ -52,4 +55,5 @@ export const ProfileJoi = Joi.object().keys({
   discordUsername: Joi.string().regex(/.+#\d{4}/i),
 
   games: Joi.array().items(GameJoi).max(20),
+  awards: Joi.array().items(AwardJoi),
 });
