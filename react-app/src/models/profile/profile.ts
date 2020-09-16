@@ -18,5 +18,5 @@ export default class Profile {
   discordUsername?: string;
 
   games?: Game[];
-  chips?: Award[];
+  awards?: Award[];
 }

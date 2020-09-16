@@ -21,7 +21,7 @@ const useStyles = makeStyles((theme) => createStyles({
   bio: {
     marginTop: theme.spacing(1),
   },
-  chip: {
+  award: {
     marginTop: theme.spacing(1),
     marginLeft: theme.spacing(.5),
     borderWidth: '2px',
@@ -49,8 +49,8 @@ const ProfileCard: React.FC<Props> = ({ profile, children }) => {
             <Typography variant="h5" align="center" className={classes.username}>{profile.name || 'About'}</Typography>
             <Divider />
             <Typography align="center" className={classes.bio}>{profile.bio || 'No Profile Bio'}</Typography>
-            {profile.chips?.map((chip) => (
-              <Chip label={chip.text} style={{ borderColor: chip.color }} variant="outlined" className={classes.chip} />
+            {profile.awards?.map((award) => (
+              <Chip label={award.text} style={{ borderColor: award.color }} variant="outlined" className={classes.award} />
             ))}
           </>
         ))}
