@@ -52,7 +52,7 @@ const ProfileCard: React.FC<Props> = ({ profile, children }) => {
               <Grid container justify="center" spacing={1} className={classes.awards}>
                 {profile.awards.map((award) => (
                   <Grid item key={award._id}>
-                    <Chip label={award.text} style={{ borderColor: award.color }} variant="outlined" />
+                    <Chip label={award.text} variant="outlined" style={{ borderColor: award.color }} />
                   </Grid>
                 ))}
               </Grid>
