@@ -24,7 +24,7 @@
     "morgan": "1.10.0",
     "passport": "0.4.1",
     "passport-google-oauth20": "2.0.0",
-    "typescript": "4.0.2"
+    "typescript": "4.0.3"
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "3.10.1",
