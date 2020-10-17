@@ -47,16 +47,6 @@ const useStyles = makeStyles((theme) => createStyles({
     objectPosition: 'right',
   },
 
-  alert: {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-
-    borderRadius: 0,
-  },
-  alertIcon: {
-    alignItems: 'center',
-  },
-
   brick: {
     height: theme.spacing(60),
 
@@ -123,6 +113,16 @@ const useStyles = makeStyles((theme) => createStyles({
 
     borderRadius: theme.spacing(2),
   },
+
+  alert: {
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+
+    borderRadius: 0,
+  },
+  alertIcon: {
+    alignItems: 'center',
+  },
 }));
 
 const Home: React.FC = () => {
@@ -136,14 +136,6 @@ const Home: React.FC = () => {
             <img src={Banner_Home} alt="Home Banner" className={classes.bannerImgHome} />
             <img src={Banner_Welcome_Back} alt="Welcome Back Banner" className={classes.bannerImgWelcomeBack} />
           </Carousel>
-        </Grid>
-        <Grid item xs={12}>
-          <Link href="https://docs.google.com/forms/d/e/1FAIpQLScVyIRhmSr-AXO3nvXIWj-rWs64sLhDYUfgqtAiPxkhAeLXlw/viewform?usp=sf_link" target="_blank" rel="noopener noreferrer">
-            <Alert severity="info" icon={<TigerLogoColorIcon />} classes={{ icon: classes.alertIcon }} className={classes.alert}>
-              <AlertTitle>Interested in joining RIT Esports?</AlertTitle>
-              Click here to fill out our general interest form!
-            </Alert>
-          </Link>
         </Grid>
         <Grid item xs={12} sm={7}>
           <Brick title="STREAM" variant="secondary" className={classes.brick}>
@@ -207,6 +199,14 @@ const Home: React.FC = () => {
               </Grid>
             </Grid>
           </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Link href="https://forms.gle/6JsrhYJtyrR98WEq6" target="_blank" rel="noopener noreferrer">
+            <Alert severity="info" icon={<TigerLogoColorIcon />} classes={{ icon: classes.alertIcon }} className={classes.alert}>
+              <AlertTitle>Let us know what you think!</AlertTitle>
+              Click here to send us feedback.
+            </Alert>
+          </Link>
         </Grid>
       </Grid>
     </Container>
