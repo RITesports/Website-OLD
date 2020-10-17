@@ -7,6 +7,10 @@ updates:
       day: "friday"
       time: "17:00"
       timezone: "America/New_York"
+<<<<<<< HEAD
+=======
+    target-branch: "develop"
+>>>>>>> develop
     labels:
       - "Dependencies"
     reviewers:
@@ -19,7 +23,15 @@ updates:
       day: "friday"
       time: "17:00"
       timezone: "America/New_York"
+<<<<<<< HEAD
     labels:
       - "Dependencies"
     reviewers:
       - "RITesports/managers"
+=======
+    target-branch: "develop"
+    labels:
+      - "Dependencies"
+    reviewers:
+      - "RITesports/managers"
+>>>>>>> develop
