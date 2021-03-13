@@ -201,7 +201,7 @@ const Home: React.FC = () => {
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Link href="https://forms.gle/6JsrhYJtyrR98WEq6" target="_blank" rel="noopener noreferrer">
+          <Link href="https://forms.gle/X5NczsepnmofdQ3X8" target="_blank" rel="noopener noreferrer">
             <Alert severity="info" icon={<TigerLogoColorIcon />} classes={{ icon: classes.alertIcon }} className={classes.alert}>
               <AlertTitle>Let us know what you think!</AlertTitle>
               Click here to send us feedback.
