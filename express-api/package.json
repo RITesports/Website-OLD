@@ -7,7 +7,7 @@
     "@types/cookie-parser": "1.4.2",
     "@types/express": "4.17.8",
     "@types/hapi__joi": "17.1.6",
-    "@types/helmet": "0.0.48",
+    "@types/helmet": "4.0.0",
     "@types/jsonwebtoken": "8.5.0",
     "@types/mongoose": "5.7.36",
     "@types/morgan": "1.9.1",
