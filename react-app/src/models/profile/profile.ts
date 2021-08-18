@@ -1,6 +1,7 @@
 import ObjectID from 'bson-objectid';
 
 import Game from './game';
+import Award from './award';
 
 export default class Profile {
   _id = new ObjectID().toHexString();
@@ -17,4 +18,5 @@ export default class Profile {
   discordUsername?: string;
 
   games?: Game[];
+  awards?: Award[];
 }
