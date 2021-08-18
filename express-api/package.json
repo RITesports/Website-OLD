@@ -12,7 +12,7 @@
     "@types/mongoose": "5.7.36",
     "@types/morgan": "1.9.1",
     "@types/node": "16.6.1",
-    "@types/passport": "1.0.4",
+    "@types/passport": "1.0.7",
     "@types/passport-google-oauth20": "2.0.9",
     "cookie-parser": "1.4.5",
     "cross-env": "7.0.3",
