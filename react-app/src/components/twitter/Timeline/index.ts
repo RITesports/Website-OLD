@@ -1,6 +1,5 @@
 type Twttr = {
   widgets: {
-    /* eslint-disable @typescript-eslint/no-explicit-any */
     // TODO: actually type props
     createShareButton: (...props: any) => Promise<HTMLElement>;
     createFollowButton: (...props: any) => Promise<HTMLElement>;
