@@ -12,7 +12,7 @@ const App: React.FC = () => (
     }}
     />
     <Header />
-    {/* <Routes /> */}
+    <Routes />
   </>
 );
 
