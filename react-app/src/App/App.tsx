@@ -12,6 +12,7 @@ const App: React.FC = () => (
     }}
     />
     <Header />
+    <div style={{ fontSize: 40 }}>Braden Is Here</div>
     <Routes />
   </>
 );
